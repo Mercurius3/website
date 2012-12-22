@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website</title>
+  <%= stylesheet_link_tag "http://f.fontdeck.com/s/css/l4MsFun30OJhB9DTDGcb8JQSAOQ/localhost/2208.css" if Rails.env.development? %>
+  <%= stylesheet_link_tag "http://f.fontdeck.com/s/css/l4MsFun30OJhB9DTDGcb8JQSAOQ/lassche-lassche.nl/2208.css" if Rails.env.production? %>
+  <%= stylesheet_link_tag "http://f.fontdeck.com/s/css/l4MsFun30OJhB9DTDGcb8JQSAOQ/staging.lassche-lassche.nl/2208.css" if Rails.env.production? %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="horizon">
+  <div id="page_container">
+    <header id="header" class="cf">
+      <div id="marketing">
+        <div id="logo">
+          <h1><%= link_to (raw "lassche <span>&</span> lassche"), root_path %></h1>
+          <h2 id="logo_extra">kunst- en cultuureducatie</h2>
+        </div>
+        <h2 id="tagline">je <span>ziet</span> meer<br /> als je weet waar je naar kijkt</h2>
+      </div>
+      <nav id="menu">
+        <ul>
+          <li><%= link_to_unless_current "Home", page_path("home") %></li>
+          <li><%= link_to_unless_current "Programma", page_path("programma") %></li>
+          <li><%= link_to_unless_current "Voorwaarden", page_path("voorwaarden") %></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="main" class="cf">
+      <div class="column">
+        <%= raw render 'shared/sidebar' if current_page?(url_for(:controller => 'pages', :action => 'show', :id => 'programma')) %>
+      </div>
+      <div class="column">
+        <%= yield %>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2012 Lassche &amp; Lassche</p>
+    </footer>
+  <div><!-- page_container -->
+</body>
+</html>

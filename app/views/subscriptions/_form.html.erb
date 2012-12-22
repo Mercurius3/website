@@ -1,0 +1,26 @@
+<%= form_for(@subscription) do |f| %>
+  <% if @subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+
+      <ul>
+      <% @subscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :product, "Product" %><br />
+    <%= f.text_field :product %><br />
+    <%= f.label :first_name, "Voornaam" %><br />
+    <%= f.text_field :first_name %><br />
+    <%= f.label :last_name, "Achternaam" %><br />
+    <%= f.text_field :last_name %><br />
+    <%= f.label :email, "Emailadres" %><br />
+    <%= f.text_field :email %><br />
+  </p>
+  <p>Om zich in te kunnen schrijven, dient u akkoord te gaan met onze <%= link_to "voorwaarden", page_path("voorwaarden") %></p>
+  <p><%= check_box_tag "Accepteer", :required => true %> Ik accepteer de voorwaarden</p>
+  <p><%= f.submit "Aanmelden" %></p>
+<% end %>
