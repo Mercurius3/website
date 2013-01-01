@@ -1,7 +1,11 @@
 Website::Application.routes.draw do
+  
+  match 'switch_mobile_view' => 'pages#switch_mobile_view'
 
   resources :subscriptions, :only => [:new, :create]
-
+  resources :products, :only => :index
+  resources :pages, :only => :show
+  
   ActiveAdmin.routes(self)
   
   devise_for :admin_users, ActiveAdmin::Devise.config

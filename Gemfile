@@ -37,4 +37,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'activeadmin'
+gem 'activeadmin-sortable'
+gem 'acts_as_list'
 gem 'markdownpages', path: '../markdownpages'
+
+gem 'mobylette'
+gem 'jquery_mobile_rails'

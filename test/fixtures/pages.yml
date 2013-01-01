@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  permalink: MyString
-  content: MyText
+  name: Home
+  permalink: home
+  content: "Dit is de test homepagina."
 
 two:
-  name: MyString
-  permalink: MyString
-  content: MyText
+  name: About
+  permalink: about
+  content: "Dit is de aboutpagina."

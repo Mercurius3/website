@@ -1,0 +1,8 @@
+<div data-role="collapsible-set">
+  <%= div_for(@products, "data-role" => "collapsible", "data-content-theme" => "c") do |product| %>
+    <h1><%= product.name %></h1>
+    <%= raw Kramdown::Document.new(product.content).to_html %>
+    <p class="meta">Locatie: <%= product.location %></p>
+    <p class="meta">Docent: <%= product.teacher %></p>
+  <% end %>
+</div>
