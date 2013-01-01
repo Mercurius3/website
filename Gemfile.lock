@@ -92,7 +92,7 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    libv8 (3.11.8.3)
+    libv8 (3.11.8.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -185,7 +185,7 @@ DEPENDENCIES
   execjs
   jquery-rails
   jquery_mobile_rails
-  libv8 (~> 3.11.8)
+  libv8 (~> 3.11.8.4)
   mobylette
   mysql2
   rails (= 3.2.9)
