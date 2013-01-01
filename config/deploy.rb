@@ -15,6 +15,9 @@ set :repository,  "git@github.com:Mercurius3/website.git"
 # Gebruik de standaard Ruby van de server
 set :rvm_ruby_string, 'default'
 
+# Fix de error 'no such file or directory'
+set :normalize_asset_timestamps, false
+
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.
 set :deploy_to, "~/rails"
