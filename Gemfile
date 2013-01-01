@@ -10,7 +10,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'libv8', '~> 3.11.8'
+  gem 'libv8', '~> 3.11.8.4'
   gem 'therubyracer'
   gem 'execjs'
   gem 'mysql2'
