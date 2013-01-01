@@ -10,7 +10,7 @@ set :user, "lassche"
 
 # Versiebeheer instellingen
 set :scm, :git  # Of 'subversion', 'mercurial' , etc.
-set :repository,  "git@repository:applicatie"
+set :repository,  "git@github.com:Mercurius3/website.git"
 
 # Gebruik de standaard Ruby van de server
 set :rvm_ruby_string, 'default'
