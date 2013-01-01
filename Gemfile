@@ -43,3 +43,6 @@ gem 'markdownpages', path: '../markdownpages'
 
 gem 'mobylette'
 gem 'jquery_mobile_rails'
+
+gem 'capistrano'
+gem 'rvm-capistrano'
