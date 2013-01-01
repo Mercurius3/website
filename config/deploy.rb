@@ -5,7 +5,7 @@ require 'rvm/capistrano'
 set :application, "website"
 
 # Gegevens van de Bluerail server
-set :host, "server.bluerail.nl"
+set :host, "mushu.bluerail.nl"
 set :user, "lassche"
 
 # Versiebeheer instellingen
