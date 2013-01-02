@@ -22,7 +22,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}"
   end
   
-  after "deploy:update_code", :create_symlinks
+  before "deploy:assets:precompile", :create_symlinks
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
@@ -34,7 +34,7 @@ end
 
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.
-set :deploy_to, "/var/www/vhosts/lassche-lassche.nl/rails"
+set :deploy_to, "/var/www/vhosts/lassche-lassche.nl/staging"
 set :rvm_type, :system
 set :rvm_bin_path, '/usr/local/rvm/bin'
 set :use_sudo, false
