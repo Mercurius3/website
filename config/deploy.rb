@@ -23,7 +23,9 @@ namespace :deploy do
   end
   
   before "deploy:assets:precompile", :create_symlinks
+end
 
+namespace :deploy do
   # Create symbolic links to shared files on server containing sensitive information like passwords
   task :create_symlinks do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
