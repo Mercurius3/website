@@ -14,6 +14,7 @@
       <%= raw render 'shared/sidebar' if current_page?(url_for(:controller => 'pages', :action => 'show', :id => 'programma')) %>
     </section>
     <section id="content" class="column">
+      <%= render 'shared/errors' %>
       <%= yield %>
       <%= switch_mobile_view %>
     </section>

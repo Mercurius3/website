@@ -1,27 +1,18 @@
 class SubscriptionsController < InheritedResources::Base
+  respond_to :html, :xml, :json, :mobile
+  
   def new
     @subscription = Subscription.new
-    # respond_to do |format|
-    #   format.html
-    #   format.mobile
-    #   format.json { render json: @subscription }
-    # end
   end
 
   def create
     @subscription = Subscription.new(params[:subscription])
-    
-    respond_to do |format|
-      if @subscription.save
-        SubscriptionMailer.subscription_confirmation(@subscription).deliver  
-        format.html { redirect_to root_path, notice: 'Wij hebben uw aanmelding ontvangen!' }
-        format.mobile { redirect_to root_path, notice: 'Wij hebben uw aanmelding ontvangen!' }
-        # format.json { render json: @subscription, status: :created, location: @subscription }
-      else
-        format.html { render action: "new" }
-        format.mobile { render action: "new" }
-        # format.json { render json: @subscription.errors, status: :unprocessable_entity }
-      end
+    if @subscription.save
+      SubscriptionMailer.subscription_confirmation(@subscription).deliver  
+      redirect_to root_path, notice: 'Wij hebben uw aanmelding ontvangen!'
+    else
+      flash[:alert] = "trouble"
+      render :action => 'new'
     end
   end
 

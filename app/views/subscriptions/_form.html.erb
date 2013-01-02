@@ -12,15 +12,15 @@
   <% end %>
   <p>
     <%= f.label :product, "Product" %><br />
-    <%= f.text_field :product %><br />
+    <%= f.text_field :product, value: "product" %><br />
     <%= f.label :first_name, "Voornaam" %><br />
-    <%= f.text_field :first_name %><br />
+    <%= f.text_field :first_name, value: "Uw voornaam" %><br />
     <%= f.label :last_name, "Achternaam" %><br />
-    <%= f.text_field :last_name %><br />
+    <%= f.text_field :last_name, value: "Uw achternaam" %><br />
     <%= f.label :email, "Emailadres" %><br />
-    <%= f.text_field :email %><br />
-  </p>
-  <p>Om zich in te kunnen schrijven, dient u akkoord te gaan met onze <%= link_to "voorwaarden", page_path("voorwaarden") %></p>
-  <p><%= check_box_tag "Accepteer", :required => true %> Ik accepteer de voorwaarden</p>
-  <p><%= f.submit "Aanmelden" %></p>
+    <%= f.email_field :email, value: "Uw emailadres" %><br />
+    Om zich in te kunnen schrijven, dient u akkoord te gaan met onze <%= link_to "voorwaarden", page_path("voorwaarden") %><br />
+    <%= f.check_box :accept_conditions %>
+        <%= f.label :accept_conditions, "Ik accepteer de voorwaarden" %><br />
+    <%= f.submit "Aanmelden" %></p>
 <% end %>
