@@ -31,27 +31,30 @@ p.meta, hr { color: $light; }
 //#horizon { @include background-image(linear-gradient(left, color-stops(lighten($full, 30%), $full))); }
 #horizon { background-color: $full; }
 #logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
-header#logo { position: relative; left: 17%; top: 0%; width: 83%;
+#logo { position: relative; left: 17%; top: 0%; width: 83%;
   h1 { position: relative; left: -12%; padding-top: 2.7em; }
   h2 { position: relative; font-weight: normal; font-size: 1.2em; left: 10%; padding-top: 0.4em; width: 60%; }
   a { color: #373535; text-decoration: none;
     span { color: $full }
   }
-  aside#tagline { position: absolute; left: 55%; top: 1.5em; width: 45%; 
-    line-height: 130%; font-style: italic; text-indent: 1em; 
-    span { color: $full }
-  }
-  nav#main_nav {
-    margin-top: 10%; 
+}
+
+#tagline { position: absolute; left: 55%; top: 1.5em; width: 45%; 
+  line-height: 130%; font-style: italic; text-indent: 1em; 
+  span { color: $full }
+}
+
+#main_nav {
+  margin-top: 10%; 
 //    position: relative; left: $column1; width: $column2+$column3;
-    ul { list-style: none; }
-    li { 
-      float: left; margin-right: $margin;
-      font-weight: bold; text-shadow: 0.1em 0.1em #333;
-      a { text-decoration: none; color: white; text-transform: uppercase; }
-    }
+  ul { list-style: none; }
+  li { 
+    float: left; margin-right: $margin;
+    font-weight: bold; text-shadow: 0.1em 0.1em #333;
+    a { text-decoration: none; color: white; text-transform: uppercase; }
   }
 }
+
 
 /* Links Love Hate*/
 a:link, a:visited { color: $pink; }
