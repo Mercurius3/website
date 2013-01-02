@@ -5,7 +5,6 @@
   <%= render 'shared/title' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag "application.mobile", :media => "all" %>
-  <%= javascript_include_tag "application.mobile" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,6 +22,7 @@
       </div>
       <%= render 'shared/footer' %>
     </nav>
-  </div><!-- page --> 
+  </div><!-- page -->
+  <%= javascript_include_tag "application.mobile" %>
 </body>
 </html>
