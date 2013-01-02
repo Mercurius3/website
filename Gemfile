@@ -48,6 +48,7 @@ gem 'activeadmin'
 gem 'activeadmin-sortable'
 gem 'acts_as_list'
 # gem 'markdownpages', path: '../markdownpages'
+gem 'kramdown'
 
 gem 'mobylette'
 gem 'jquery_mobile_rails'
