@@ -30,7 +30,7 @@ p.meta, hr { color: $light; }
 /*************** Header and logo ***************/
 //#horizon { @include background-image(linear-gradient(left, color-stops(lighten($full, 30%), $full))); }
 #horizon { background-color: $full; }
-//#logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
+#logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
 #logo { position: relative; left: 17%; top: 0%; width: 83%;
   h1 { position: relative; left: -12%; padding-top: 2.7em; }
   h2 { position: relative; font-weight: normal; font-size: 1.2em; left: 10%; padding-top: 0.4em; width: 60%; }
