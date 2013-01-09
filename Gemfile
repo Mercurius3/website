@@ -55,3 +55,5 @@ gem 'jquery_mobile_rails'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
+
+gem 'simple_form'
