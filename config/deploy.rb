@@ -21,13 +21,14 @@ namespace :deploy do
   task :restart, roles: :app, except: { no_release: true } do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}"
   end
-  
+
   before "deploy:assets:precompile", :create_symlinks
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
 task :create_symlinks do
   run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  run "ln -nfs #{deploy_to}/shared/config/environment.rb #{release_path}/config/environment.rb"
   run "ln -nfs #{deploy_to}/shared/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
   # run "ln -nfs #{deploy_to}/shared/config/application.yml #{release_path}/config/application.yml"
   # run "ln -nfs #{deploy_to}/shared/config/newrelic.yml #{release_path}/config/newrelic.yml"
