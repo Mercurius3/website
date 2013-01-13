@@ -1,19 +1,21 @@
 Website::Application.routes.draw do
-  
+
   match 'switch_mobile_view' => 'pages#switch_mobile_view'
+
+  match 'aanmelden' => 'subscriptions#new'
 
   resources :subscriptions, :only => [:new, :create]
   resources :products, :only => :index
   resources :pages, :only => :show
-  
+
   ActiveAdmin.routes(self)
-  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   # resources :pages, except: :show
   get ':id', to: 'pages#show', as: :page
-  
-  # resources :pages, except: :show 
+
+  # resources :pages, except: :show
   # get ':id', to: 'pages#show', as: :page
 
   # The priority is based upon order of creation:
@@ -72,4 +74,5 @@ Website::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match '*a', :to => 'errors#routing' unless Rails.application.config.consider_all_requests_local
 end

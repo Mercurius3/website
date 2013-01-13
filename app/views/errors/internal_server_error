@@ -1,0 +1,7 @@
+Error 500
+
+Oeps. Er is iets misgegaan.
+
+Klik <%= link_to 'hier', root_path %> om terug te keren naar de home pagina.
+
+<%= @log %>
