@@ -1,9 +1,9 @@
-<%= simple_form_for @subscription do |f| %>
+<%= simple_form_for @subscription, validate: true do |f| %>
   <%= f.error_notification %>
-  <%= f.input :product %>
-  <%= f.input :first_name, label: "Voornaam", placeholder: "Uw voornaam" %>
-  <%= f.input :last_name, label: "Achternaam", placeholder: "Uw achternaam" %>
-  <%= f.input :email, label: "Emailadres", placeholder: "Uw emailadres" %>
-  <%= f.input :accept_conditions, label: "Ik accepteer de voorwaarden." %>
+  <%= f.input :product, validate: true %>
+  <%= f.input :first_name, label: "Voornaam", placeholder: "Uw voornaam", validate: true %>
+  <%= f.input :last_name, label: "Achternaam", placeholder: "Uw achternaam", validate: true %>
+  <%= f.input :email, label: "Emailadres", placeholder: "Uw emailadres", validate: true %>
+  <%= f.input :accept_conditions, label: "Ik accepteer de voorwaarden.", validate: true %>
   <%= f.submit "Aanmelden" %>
 <% end %>
