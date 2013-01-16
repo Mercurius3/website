@@ -1,12 +1,16 @@
 Website::Application.routes.draw do
 
+
   match 'switch_mobile_view' => 'pages#switch_mobile_view'
 
   match 'aanmelden' => 'subscriptions#new'
+  match 'contact' => 'messages#new'
 
   resources :subscriptions, :only => [:new, :create]
   resources :products, :only => :index
   resources :pages, :only => :show
+  resources :messages, :only => [:new, :create]
+  resources :users, only: [:new, :create, :edit]
 
   ActiveAdmin.routes(self)
 
