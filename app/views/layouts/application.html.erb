@@ -5,16 +5,16 @@
   <%= render 'shared/title' %>
   <%= webfont_for_current_environment %>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags unless response.cache_control[:public] %>
 </head>
 <body id="horizon">
-  <%= render 'shared/header' %>  
+  <%= render 'shared/header' %>
   <div id="main" class="cf">
     <section id="sidebar" class="column">
       <%= raw render 'shared/sidebar' if current_page?(url_for(:controller => 'pages', :action => 'show', :id => 'programma')) %>
     </section>
     <section id="content" class="column">
-      <%= render 'shared/errors' %>
+      <%= render 'shared/errors' unless response.cache_control[:public] %>
       <%= yield %>
       <%= switch_mobile_view %>
     </section>

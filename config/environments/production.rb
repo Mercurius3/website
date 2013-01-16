@@ -66,4 +66,7 @@ Website::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  # set cache for static files like application.css & application.js to one year
+  config.static_cache_control = "public, max-age=315360009"
 end
