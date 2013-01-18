@@ -16,36 +16,3 @@
 Header unset ETag
 FileETag None
 
-<IfModule mod_headers.c>
-    <IfModule mod_mime.c> #Ref1
-        AddType application/vnd.ms-fontobject .eot
-        AddType font/truetype .ttf
-        AddType font/opentype .otf
-        AddType font/woff .woff
-        AddType image/svg+xml svg svgz #Ref2
-        AddEncoding gzip svgz
-    </IfModule>
-    <IfModule mod_deflate.c> #Ref3
-        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json #Ref4
-        <FilesMatch "\.(ttf|otf|woff|eot|svg|svgz)$" >
-            SetOutputFilter DEFLATE
-        </FilesMatch>
-        BrowserMatch ^Mozilla/4 gzip-only-text/html #Ref5
-        BrowserMatch ^Mozilla/4\.0[678] no-gzip
-## BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-# NOTE: Due to a bug in mod_setenvif up to Apache 2.0.48 the above regex won't work. You can use the following workaround to get the desired effect:
-        BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
-
-        SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary #Ref6
-        SetEnvIfNoCase Request_URI \.(?:swf|flv|pdf)$ no-gzip dont-vary
-        SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
-        SetEnvIfNoCase Request_URI \.(?:avi|mov)$ no-gzip dont-vary
-        SetEnvIfNoCase Request_URI \.(?:mp3|mp4)$ no-gzip dont-vary
-
-        Header append Vary User-Agent env=!dont-vary #Ref7
-
-    </IfModule>
-    <FilesMatch "\.(ttf|otf|eot|woff|font.css)$"> #Ref8
-        Header set Access-Control-Allow-Origin "*"
-    </FilesMatch>
-</IfModule>
