@@ -16,3 +16,4 @@
 Header unset ETag
 FileETag None
 
+AddType application/x-font-woff woff
