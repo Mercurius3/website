@@ -1,0 +1,67 @@
+= Looking for new maintainer!! - please send message
+
+= Jquery Mobile for Rails
+
+This gem adds the JQuery Mobile files to the rails assets pipeline.
+
+==== Gem's JQuery Mobile Version
+
+1.3.0 (gem 1.3.0)
+
+=== Instalation
+
+Add this gem to your Gemfile:
+
+    gem 'jquery_mobile_rails'
+
+This will include to your assets pipeline the jquery mobile's javascripts, stylesheets and images.
+
+Insert into your application.js manifest the jquery.mobile (or jquery.mobile.min)
+
+    //= require jquery
+    //= require jquery_ujs
+    //= require jquery.mobile
+
+And the same to your application.css manifest:
+
+    *= require_self
+    *= require_tree .
+    *= require jquery.mobile
+
+
+=== Use
+
+I built this gem for using with the Mobylette gem, but it will work with your stand alone application, or with any other gem that filters your mobile requests.
+
+For layouting using JQuery Mobile, and using all its features, I suggest your give a look at their documentation: http://jquerymobile.com/test/
+
+
+=== Example
+
+Inside the test/dummy there is a simple application using a very basic jquery mobile templating.
+
+== Different versions
+
+By default, jquery_mobile_rails gem will provide latest stable version of JQM.
+Besides that you can switch to other versions by selecting a different branch.
+
+For example, to use 1.2.0-alpha.1, update your Gemfile to:
+
+  gem "jquery_mobile_rails", git: "git://github.com/tscolari/jquery-mobile-rails.git", branch: "1.2.0-alpha.1"
+
+== Pull Requests
+
+Please, this steps help a lot the merge proccess:
+
+* Copy jquery mobile files to vendor/assets/(javascripts|stylesheets|images)/
+* Remove version number from the file names
+* place images in the sub-directory named 'jquery-mobile' (vendor/assets/images/jquery-mobile)
+* run the rake task `jquery_mobile_rails_css_fix`. This will ensure that the images in the css will be loaded using `image-url()` instead of `url()`, and it will convert the file to scss.
+
+:)
+
+=== References
+
+* JQuery Mobile Page: http://jquerymobile.com/
+* Mobylette Gem: https://github.com/tscolari/mobylette
+* Mobile_fu Gem: https://github.com/brendanlim/mobile-fu
