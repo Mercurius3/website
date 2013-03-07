@@ -7,17 +7,18 @@ Website::Application.routes.draw do
   match 'contact' => 'messages#new'
 
   resources :subscriptions, :only => [:new, :create]
-  resources :products, :only => :index
+  resources :products, :only => [:index, :show]
   resources :pages, :only => :show
   resources :messages, :only => [:new, :create]
   resources :users, only: [:new, :create, :edit]
+  resources :events, only: [:index, :show]
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   # resources :pages, except: :show
-  get ':id', to: 'pages#show', as: :page
+  # get ':id', to: 'pages#show', as: :page
 
   # resources :pages, except: :show
   # get ':id', to: 'pages#show', as: :page

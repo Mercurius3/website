@@ -5,8 +5,11 @@
   <%= f.input :sex, label: "Geslacht", collection: ["Vrouw", "Man"], prompt: "Wat is uw geslacht?", validate: true %>
   <%= f.input :email, label: "Emailadres", placeholder: "Uw emailadres", validate: true %>
   <%= f.input :postcode, label: "Postcode", placeholder: "1111 AB", validate: true %>
-  <%= f.input :date_of_birth, :as => :date, :start_year => Date.today.year - 90,
-                              :end_year => Date.today.year - 12, :discard_day => false,
-                              :order => [:day, :month, :year] %>
+  <%= f.simple_fields_for :messages do |message| %>
+    <%= render 'message_fields', :f => message %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'Voeg bericht toe', f, :messages %>
+  </div>
   <%= f.submit "Account aanmaken" %>
 <% end %>

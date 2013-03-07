@@ -9,5 +9,17 @@ ActiveAdmin.register Product do
     column :name
     column :location
     column :teacher
+    default_actions
   end
+
+  show do
+    h3 product.name
+    product.events.each do |event|
+      div do
+        "#{event.name}, #{event.datetime}"
+      end
+    end
+  end
+
+  form :partial => "form"
 end

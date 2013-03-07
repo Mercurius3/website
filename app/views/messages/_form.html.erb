@@ -1,5 +1,5 @@
-<%= simple_form_for @message, validate: true do |f| %>
-  <%= f.error_notification %>
+<%= semantic_form_for @message, validate: true do |f| %>
   <%= f.text_area :content, validate: true %>
+  <%= f.inputs :first_name, :last_name, :email, :for => :user, :name => "User" %>
   <%= f.submit "Verzenden" %>
 <% end %>

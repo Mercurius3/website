@@ -1,9 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', :path => '~/Dropbox/Github/rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 group :development, :test do
   gem 'sqlite3'
@@ -45,7 +51,7 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'activeadmin-sortable'
 gem 'acts_as_list'
-# gem 'markdownpages', path: '../markdownpages'
+gem 'markdownpages', path: '../markdownpages'
 gem 'kramdown'
 
 gem 'mobylette'
@@ -57,5 +63,8 @@ gem 'rvm-capistrano'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'cocoon'
 
 gem 'newrelic_rpm'
+
+gem 'delayed_job_active_record'

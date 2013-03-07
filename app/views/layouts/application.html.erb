@@ -11,14 +11,14 @@
   <%= render 'shared/header' %>
   <div id="main" class="cf">
     <section id="sidebar" class="column">
-      <%= raw render 'shared/sidebar' if current_page?(url_for(:controller => 'pages', :action => 'show', :id => 'programma')) %>
+      <%= raw render 'shared/sidebar' if params[:id] == 'programma' %>
     </section>
     <section id="content" class="column">
       <%= render 'shared/errors' unless response.cache_control[:public] %>
       <%= yield %>
-      <%= switch_mobile_view %>
     </section>
   </div>
+  <%= render 'shared/video' %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag "application", :defer => "defer" %>
 </body>

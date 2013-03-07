@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  datetime: 2013-01-31 08:26:32
+  duration: 1
+  product_id: 1
+
+two:
+  name: MyString
+  datetime: 2013-01-31 08:26:32
+  duration: 1
+  product_id: 1

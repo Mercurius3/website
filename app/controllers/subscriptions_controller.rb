@@ -3,6 +3,7 @@ class SubscriptionsController < InheritedResources::Base
 
   def new
     @subscription = Subscription.new
+    @product = Product.find(params[:product]) if params[:product]
   end
 
   def create

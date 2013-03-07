@@ -31,7 +31,7 @@ module Website
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :nl
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -59,10 +59,13 @@ module Website
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    # config.action_controller.asset_host = "https://s3-eu-west-1.amazonaws.com/lasscheeu"
+
+    # config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf )
+    config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf)
 
   end
 end
