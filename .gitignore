@@ -22,3 +22,6 @@
 # Ignore rvm
 /.rvmrc
 /.powrc
+
+# Ignore public assets files
+/public/assets

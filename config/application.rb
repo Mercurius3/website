@@ -67,5 +67,8 @@ module Website
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
     config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf)
 
+    # Maybe redundant, since this is Sprockets' default location
+    config.assets.prefix = "/assets"
+
   end
 end
