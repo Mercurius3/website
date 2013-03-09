@@ -25,4 +25,3 @@
 
 # Ignore public assets files
 /public/assets
-/config/asset_sync.yml
