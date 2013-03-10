@@ -12,7 +12,7 @@ defaults: &defaults
   gzip_compression: true
   # Fail silently.  Useful for environments such as Heroku
   # fail_silently: true
-  manifest: false
+  # manifest: false
 
 development:
   <<: *defaults
