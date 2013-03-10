@@ -29,7 +29,7 @@ end
 task :create_symlinks do
   run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   run "ln -nfs #{deploy_to}/shared/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
-  # run "ln -nfs #{deploy_to}/shared/config/application.yml #{release_path}/config/application.yml"
+  run "ln -nfs #{deploy_to}/shared/config/application.yml #{release_path}/config/application.yml"
   # run "ln -nfs #{deploy_to}/shared/config/newrelic.yml #{release_path}/config/newrelic.yml"
 end
 
