@@ -44,7 +44,7 @@ set :deploy_to, "/var/www/vhosts/lassche-lassche.nl/staging"
 set :rvm_type, :system
 set :rvm_bin_path, '/usr/local/rvm/bin'
 set :use_sudo, false
-set :keep_releases, 3
+set :keep_releases, 1
 
 role :web, host
 role :app, host
