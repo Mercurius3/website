@@ -27,7 +27,7 @@ namespace :deploy do
   end
 
   before "deploy:assets:precompile", :create_symlinks
-  after "deploy:symlink", :update_database_yml
+  # after "deploy:create_symlink", :update_database_yml
   # TODO call cap deploy:cleanup task
   # after "deploy:update", :deploy:cleanup
 end
