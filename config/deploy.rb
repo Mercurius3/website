@@ -28,7 +28,8 @@ namespace :deploy do
 
   before "deploy:assets:precompile", :create_symlinks
   after "deploy:symlink", :update_database_yml
-  after "deploy:update", :deploy:cleanup
+  # TODO call cap deploy:cleanup task
+  # after "deploy:update", :deploy:cleanup
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
