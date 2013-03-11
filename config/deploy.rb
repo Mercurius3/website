@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
+require 'capistrano/ext/multistage'
 
 # De naam van uw applicatie
 set :application, "website"
@@ -7,6 +8,9 @@ set :application, "website"
 # Gegevens van de Bluerail server
 set :host, "mushu.bluerail.nl"
 set :user, "lassche"
+
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
 
 # Versiebeheer instellingen
 set :scm, :git  # Of 'subversion', 'mercurial' , etc.
@@ -40,7 +44,7 @@ end
 
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.
-set :deploy_to, "/var/www/vhosts/lassche-lassche.nl/staging"
+# set :deploy_to, "/var/www/vhosts/lassche-lassche.nl/staging"
 set :rvm_type, :system
 set :rvm_bin_path, '/usr/local/rvm/bin'
 set :use_sudo, false
