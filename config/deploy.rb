@@ -9,7 +9,7 @@ set :application, "website"
 set :host, "mushu.bluerail.nl"
 set :user, "lassche"
 
-set :stages, ["staging", "production"]
+set :stages, %w(staging production)
 set :default_stage, "staging"
 
 # Versiebeheer instellingen
