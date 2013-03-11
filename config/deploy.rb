@@ -27,6 +27,8 @@ namespace :deploy do
   end
 
   before "deploy:assets:precompile", :create_symlinks
+  after "deploy:symlink", :update_database_yml
+  after "deploy:update", :deploy:cleanup
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
@@ -40,7 +42,6 @@ end
 task :seed do
   run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=production && touch tmp/restart.txt"
 end
-
 
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.
