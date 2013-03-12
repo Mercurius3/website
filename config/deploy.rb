@@ -26,7 +26,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}"
   end
 
-  before "deploy:assets:precompile", :create_symlinks
+  after "deploy:symlink", :create_symlinks
   # after "deploy:create_symlink", :update_database_yml
 end
 
