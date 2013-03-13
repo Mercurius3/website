@@ -28,6 +28,7 @@ namespace :deploy do
 
   after "deploy:create_symlink", :create_symlinks
   # after "deploy:create_symlink", :update_database_yml
+  after "deploy:update", "deploy:cleanup"
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
@@ -36,10 +37,6 @@ task :create_symlinks do
   run "ln -nfs #{deploy_to}/shared/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
   run "ln -nfs #{deploy_to}/shared/config/application.yml #{release_path}/config/application.yml"
   # run "ln -nfs #{deploy_to}/shared/config/newrelic.yml #{release_path}/config/newrelic.yml"
-end
-
-task :after_deploy do
-  cleanup
 end
 
 task :seed do
