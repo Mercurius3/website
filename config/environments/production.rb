@@ -70,5 +70,5 @@ Website::Application.configure do
   # config.action_controller.asset_host = "https://s3-eu-west-1.amazonaws.com/lasscheeu"
   config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3-eu-west-1.amazonaws.com"
 
-  config.assets.precompile += %w( .woff )
+  # config.assets.precompile += %w( .woff )
 end
