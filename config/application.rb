@@ -68,7 +68,7 @@ module Website
     config.assets.paths << "#{Rails.root}/app/assets/videos"
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf)
+      config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf .mp4 .webm)
 
     # Maybe redundant, since this is Sprockets' default location
     # config.assets.prefix = "/assets"

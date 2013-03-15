@@ -44,9 +44,12 @@ Website::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3-eu-west-1.amazonaws.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+   config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf .mp4 .webm)
+   #.svg .eot .woff .ttf .mp4 & .webm should be redundant, but let's see.
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -67,8 +70,6 @@ Website::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # config.action_controller.asset_host = "https://s3-eu-west-1.amazonaws.com/lasscheeu"
-  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3-eu-west-1.amazonaws.com"
-
-  # config.assets.precompile += %w( .woff )
+  # config.assets.paths << "#{Rails.root}/app/assets/fonts"
+  config.assets.paths << "#{Rails.root}/app/assets/videos"
 end
