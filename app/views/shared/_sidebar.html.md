@@ -9,6 +9,6 @@
 * Vrijdag: [18 januari](/programma#samurai), [15 februari](/programma#indianen), [15 maart](/programma#mesdag), [19 april](/programma#rijksmuseum)
 * Zaterdag: [19 januari](/programma#samurai), [16 februari](/programma#indianen), [16 maart](/programma#mesdag), [20 april](/programma#rijksmuseum)
 
-<%= button_to "Aanmelden", new_subscription_path,:method => :get %>
-
 NB: Lassche & Lassche behoudt zich het recht voor om wijzigingen aan te brengen in het programma!
+
+<%= link_to "Aanmelden", new_subscription_path %>

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <%= render 'shared/title' %>
-  <%= favicon_link_tag  %>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= csrf_meta_tags unless response.cache_control[:public] %>
-</head>
-<body id="horizon">
-  <%= render 'shared/header' %>
-  <div id="main" class="cf">
-    <section id="sidebar" class="column">
-      <%= raw render 'shared/sidebar' if params[:id] == 'programma' %>
-    </section>
-    <section id="content" class="column">
-      <%= render 'shared/errors' unless response.cache_control[:public] %>
-      <%= yield %>
-    </section>
-  </div>
-  <%= render 'shared/video' %>
-  <%= render 'shared/footer' %>
-  <%= javascript_include_tag "application", :defer => "defer" %>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <%= render 'shared/title' %>
+    <%= favicon_link_tag  %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags unless response.cache_control[:public] %>
+  </head>
+  <body id="horizon">
+    <%= render 'shared/header' %>
+    <div id="main" class="cf">
+      <section id="sidebar" class="column">
+        <%= raw render 'shared/sidebar' if params[:controller] == 'products' %>
+      </section>
+      <section id="content" class="column">
+        <%= render 'shared/errors' unless response.cache_control[:public] %>
+        <%= yield %>
+        <%= render 'shared/video' if params[:id] == 'home' %>
+      </section>
+    </div>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag "application", :defer => "defer" %>
+  </body>
 </html>

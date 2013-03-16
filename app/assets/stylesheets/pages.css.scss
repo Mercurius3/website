@@ -29,7 +29,7 @@ body {
 p.meta, hr { color: $light; }
 
 /*************** Header and logo ***************/
-//#horizon { @include background-image(linear-gradient(left, color-stops(lighten($full, 30%), $full))); }
+/*#horizon { @include background-image(linear-gradient(left, color-stops(lighten($full, 30%), $full))); } */
 #horizon { background-color: $full; }
 #logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
 #logo { position: relative; left: 17%; top: 0%; width: 83%;
@@ -41,7 +41,7 @@ p.meta, hr { color: $light; }
 }
 
 #tagline { position: absolute; left: 55%; top: 1.5em; width: 45%;
-  line-height: 130%; font-style: italic; text-indent: 1em;
+  line-height: 130%; font-style: italic; text-indent: 1em; font-size: 14px;
   span { color: $full }
 }
 
@@ -55,6 +55,9 @@ p.meta, hr { color: $light; }
     a { text-decoration: none; color: white; text-transform: uppercase; }
   }
 }
+
+/* this line should not be necessary */
+h1 a:link, h1 a:visited { color: black;}
 
 
 /* Links Love Hate*/

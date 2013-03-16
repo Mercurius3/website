@@ -1,7 +1,7 @@
 <%= simple_form_for @subscription, validate: true do |f| %>
   <%= f.error_notification %>
   <% if params[:product] %>
-    U wilt zich inschrijven voor:<br />
+    Inschrijving voor: <%= @product.name %><br />
     <%= f.input :product, as: :hidden, input_html: { value: @product } %>
   <% else %>
     <%= f.association :product, validate: true, prompt: "Kies een product" %>
