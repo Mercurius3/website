@@ -1,8 +1,6 @@
-<div data-role="collapsible-set">
-  <%= div_for(@products, "data-role" => "collapsible", "data-content-theme" => "c") do |product| %>
-    <h1><%= link_to product.name, product %></h1>
-    <%= raw Kramdown::Document.new(product.content).to_html %>
-    <p class="meta">Locatie: <%= product.location %></p>
-    <p class="meta">Docent: <%= product.teacher %></p>
-  <% end %>
-</div>
+<%= content_tag_for(:section, @products) do |product| %>
+  <%= content_tag(:h1, (link_to product.name, product)) %>
+  <%= raw Kramdown::Document.new(product.content).to_html %>
+  <%= content_tag(:p, "Locatie: #{product.location}", class: "meta") if product.location %>
+  <%= content_tag(:p, "Docent: #{product.teacher}", class: "meta") if product.teacher %>
+<% end %>

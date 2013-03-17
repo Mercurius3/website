@@ -1,30 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Product:</b>
-  <%= @product.name %>
-</p>
-
-<p>
-  <b>Omschrijving:</b>
-  <%= @product.content %>
-</p>
-
-<p>
-  <b>Locatie:</b>
-  <%= @product.location %>
-</p>
-
-<p>
-  <b>Docent:</b>
-  <%= @product.teacher %>
-</p>
-
-<p>
-  <b>Prijs:</b>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Aanmelden', new_subscription_path(product: @product ) %>
-
+<%= content_tag(:h1, @product.name) if @product.name %>
+<%= content_tag(:p, (raw Kramdown::Document.new(@product.content).to_html)) unless @product.content.empty? %>
+<%= content_tag(:p, "Prijs: #{@product.price}", class: "meta") if @product.price %>
+<%= content_tag(:p, "Locatie: #{@product.location}", class: "meta") unless @product.location.empty? %>
+<%= content_tag(:p, "Docent: #{@product.teacher}", class: "meta") unless @product.teacher.empty? %>
+<%= div_for(@product.events) do |event| %>
+  <%= content_tag(:h2, event.name) %>
+  <%= content_tag(:p, (l event.datetime, format: :short), class: "meta") %>
+  <%= content_tag(:p, event.duration, class: "meta") %>
+<% end %>
+<%= link_to 'Aanmelden', new_subscription_path(product: @product) %>
 <%= link_to 'Back', products_path %>
