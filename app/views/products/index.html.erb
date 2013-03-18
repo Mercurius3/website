@@ -1,6 +1,7 @@
-<%= content_tag_for(:section, @products) do |product| %>
-  <%= content_tag(:h1, (link_to product.name, product)) %>
-  <%= raw Kramdown::Document.new(product.content).to_html %>
-  <%= content_tag(:p, "Locatie: #{product.location}", class: "meta") if product.location %>
-  <%= content_tag(:p, "Docent: #{product.teacher}", class: "meta") if product.teacher %>
+<% @products.each do |product| %>
+<ul>
+  <% present product do |product_presenter| %>
+    <%= link_to product_presenter.name, product %>
+  <% end %>
+</ul>
 <% end %>
