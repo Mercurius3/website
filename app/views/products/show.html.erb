@@ -1,6 +1,6 @@
 <% present @product do |product_presenter| %>
 <div id="profile">
-  <%= content_tag(:h1, product_presenter.name) %>
+  <%= product_presenter.product_h1 %>
   <%= product_presenter.description %>
   <%= product_presenter.price %>
   <%= product_presenter.location %>
