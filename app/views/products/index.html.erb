@@ -1,9 +1,4 @@
 <h1>Overzicht producten</h1>
 <% @products.each do |product| %>
-<ul>
-  <% present product do |product_presenter| %>
-    <%= product_presenter.product_link %>
-    <%= product_presenter.date %>
-  <% end %>
-</ul>
+  <p><%= link_to(product.name, product) %></p>
 <% end %>
