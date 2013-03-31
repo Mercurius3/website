@@ -197,3 +197,31 @@ nl:
   activerecord:
     errors:
       <<: *errors
+    attributes:
+      user:
+        first_name: 'Voornaam'
+        last_name: 'Achternaam'
+        email: 'Emailadres'
+      subscription:
+        subscription: 'aanmelding'
+  formtastic:
+    labels:
+      user:
+        first_name: 'Voornaam'
+        last_name: 'Achternaam'
+        email: 'Emailadres'
+      message:
+        content: 'Bericht'
+      subscription:
+        product: 'Product'
+        first_name: 'Voornaam'
+        last_name: 'Achternaam'
+        email: 'Emailadres'
+    :yes: 'Ja'
+    :no: 'Nee'
+    :create: 'Maak %{model}'
+    :update: 'Update %{model}'
+    :submit: 'Submit %{model}'
+    :cancel: 'Annuleer %{model}'
+    :reset: 'Herstel %{model}'
+    :required: 'verplicht'

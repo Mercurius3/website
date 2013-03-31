@@ -8,5 +8,5 @@
   <%= product_presenter.events %>
 </div>
 <% end %>
-<%= link_to 'Aanmelden', new_subscription_path(product: @product) %>
+<%= link_to 'Aanmelden', new_subscription_path(product_id: @product.id) %>
 <%= link_to 'Back', products_path %>

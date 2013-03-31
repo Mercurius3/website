@@ -1,11 +1,11 @@
 class Subscription < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :product_id, :accept_conditions
+  attr_accessible :user_attributes, :accept_conditions, :product_id, :user_id
 
-  validates_presence_of :product, message: "Voor welk product wilt u zich inschrijven?"
-  validates_presence_of :first_name, message: "U heeft uw voornaam niet ingevuld"
-  validates_presence_of :last_name, message: "U heeft uw achternaam niet ingevuld"
-  validates_presence_of :email, message: "U heeft geen emailadres ingevuld"
+  validates_presence_of :product_id, message: "Voor welk product wilt u zich inschrijven?"
+  validates_associated :user
   validates_presence_of :accept_conditions, message: "U dient de voorwaarden te accepteren"
 
   belongs_to :product
+  belongs_to :user
+  accepts_nested_attributes_for :user
 end

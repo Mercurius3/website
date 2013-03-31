@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  product: MyString
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+axel:
+  product: "Museumgroep"
+  first_name:
+  last_name: Graff
+  email: axelgraff@gmail.com
 
-two:
-  product: MyString
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+marielle:
+  product: "Rondleiding"
+  first_name: Marielle
+  last_name: Lassche
+  email: marielle@gmail.com

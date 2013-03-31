@@ -1,5 +1,11 @@
 <%= semantic_form_for @message, validate: true do |f| %>
-  <%= f.text_area :content, validate: true %>
-  <%= f.inputs :first_name, :last_name, :email, :for => :user, :name => "User" %>
-  <%= f.submit "Verzenden" %>
+  <%= f.inputs do %>
+    <%= f.input :content, validate: true %>
+  <% end %>
+  <%= f.inputs do %>
+    <%= f.inputs :first_name, :last_name, :email, for: :user %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.submit "Verzenden" %>
+  <% end %>
 <% end %>

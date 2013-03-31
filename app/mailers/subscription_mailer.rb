@@ -3,7 +3,8 @@ class SubscriptionMailer < ActionMailer::Base
 
   def subscription_confirmation(subscription)
     @subscription = subscription
-    mail(:to => subscription.email, :subject => "Aanmelding")
+    # @product = Product.find(@subscription.product)
+    mail(:to => subscription.user.email, :subject => "Aanmelding")
   end
 
 end

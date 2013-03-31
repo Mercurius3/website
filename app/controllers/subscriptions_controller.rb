@@ -3,7 +3,8 @@ class SubscriptionsController < InheritedResources::Base
 
   def new
     @subscription = Subscription.new
-    @product = Product.find(params[:product]) if params[:product]
+    @user = @subscription.build_user
+    @product = Product.find(params[:product_id]) if params[:product_id]
   end
 
   def create
@@ -16,5 +17,4 @@ class SubscriptionsController < InheritedResources::Base
       render :action => 'new'
     end
   end
-
 end

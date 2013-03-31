@@ -1,14 +1,15 @@
-<%= simple_form_for @subscription, validate: true do |f| %>
-  <%= f.error_notification %>
-  <% if params[:product] %>
-    Inschrijving voor: <%= @product.name %><br />
-    <%= f.input :product, as: :hidden, input_html: { value: @product } %>
+<%= simple_form_for @subscription do |f| %>
+  <% if @product %>
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <%= content_tag :p, "Inschrijving voor #{@product.name}" %>
   <% else %>
-    <%= f.association :product, validate: true, prompt: "Kies een product" %>
+    <%= f.association :product %>
   <% end %>
-  <%= f.input :first_name, label: "Voornaam", placeholder: "Uw voornaam", validate: true %>
-  <%= f.input :last_name, label: "Achternaam", placeholder: "Uw achternaam", validate: true %>
-  <%= f.input :email, label: "Emailadres", placeholder: "Uw emailadres", validate: true %>
-  <%= f.input :accept_conditions, label: "Ik accepteer de #{link_to 'voorwaarden', page_path(:voorwaarden)}.", validate: true %>
+  <%= f.simple_fields_for :user do |user| %>
+    <%= user.input :first_name %>
+    <%= user.input :last_name %>
+    <%= user.input :email %>
+  <% end %>
+  <%= f.input :accept_conditions, label: "Ik accepteer de #{link_to('voorwaarden', page_path(:voorwaarden))}.".html_safe %>
   <%= f.submit "Aanmelden" %>
 <% end %>

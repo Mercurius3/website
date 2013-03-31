@@ -19,6 +19,11 @@ ActiveAdmin.register Product do
         "#{event.name}, #{event.datetime}"
       end
     end
+    product.users.each do |user|
+      div do
+        user.email
+      end
+    end
   end
 
   form :partial => "form"

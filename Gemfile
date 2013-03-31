@@ -9,6 +9,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'terminal-notifier-guard'
+  gem 'rb-fsevent', '~> 0.9'
 end
 
 group :development, :test do
@@ -20,6 +22,15 @@ group :production do
   gem 'therubyracer'
   gem 'execjs'
   gem 'mysql2'
+end
+
+group :test do
+ gem 'mocha', require: false
+ gem 'factory_girl_rails', '~> 4.0'
+end
+
+group :tools do
+  gem 'guard-test'
 end
 
 # Gems used only for assets and not required
@@ -49,7 +60,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-gem 'activeadmin'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'activeadmin-sortable'
 gem 'acts_as_list'
 # gem 'markdownpages', path: '../markdownpages'
