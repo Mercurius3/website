@@ -1,2 +1,2 @@
-set :rails_env, "production"
+set :rails_env, "staging"
 set :deploy_to,"/var/www/vhosts/lassche-lassche.nl/staging"

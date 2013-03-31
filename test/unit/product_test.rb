@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
 
   def setup
     @product = build(:product)

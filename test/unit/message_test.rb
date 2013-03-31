@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class MessageTest < ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
+
   def setup
     @message = build(:message)
   end
@@ -21,6 +23,7 @@ class MessageTest < ActiveSupport::TestCase
 
   test "User last_name should be Doe" do
     assert_equal @message.user.last_name, "Doe"
+
   end
 
   test "User email should be johndoe@example.com" do

@@ -1,7 +1,11 @@
-Geachte <%= @user.first_name %> <%= @user.last_name %>,
+Geachte <%= @message.user.first_name %> <%= @message.user.last_name %>,
 
 Wij hebben uw bericht in goede orde ontvangen. Wij nemen zo spoedig mogelijk contact met u op.
 
 Met vriendelijke groet,
 
 Lassche & Lassche
+
+Uw bericht:
+
+<%= @message.content %>

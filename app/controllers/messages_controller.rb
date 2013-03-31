@@ -6,9 +6,10 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
+    puts @message.inspect
     if @message.save
-      MessageMailer.delay.message_confirmation(@message)
-      redirect_to root_path, notice: 'Wij hebben uw bericht ontvangen!'
+      MessageMailer.message_confirmation(@message).deliver
+      redirect_to root_path, notice: "Wij hebben uw bericht ontvangen en een ontvangsbestiging verzonden naar uw emailadres: #{@message.user.email}!"
     else
       flash[:alert] = "Er is een probleem"
       render :action => 'new'
