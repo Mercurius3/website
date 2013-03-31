@@ -80,3 +80,4 @@ gem 'cocoon'
 gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record'
+gem 'i18n'

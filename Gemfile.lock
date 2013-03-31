@@ -271,6 +271,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails (~> 4.0)
   guard-test
+  i18n
   jquery-rails
   jquery_mobile_rails
   kramdown
