@@ -28,7 +28,7 @@ namespace :deploy do
 
   before "deploy:assets:precompile", :create_symlinks
   # after "deploy:create_symlink", :update_database_yml
-  after "deploy:update", "deploy:cleanup"
+  after "deploy", "deploy:cleanup"
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
