@@ -24,7 +24,7 @@ test:
 
 staging:
   <<: *defaults
-  fog_directory: "website-staging-assets"
+  # fog_directory: "website-staging-assets"
 
 production:
   <<: *defaults
