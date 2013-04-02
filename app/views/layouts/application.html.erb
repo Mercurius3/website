@@ -11,7 +11,7 @@
     <%= render 'shared/header' %>
     <div id="main" class="cf">
       <section id="sidebar" class="column">
-        <%= raw render 'shared/sidebar' if params[:controller] == 'products' %>
+        <%= render 'shared/sidebar' %>
       </section>
       <section id="content" class="column">
         <%= render 'shared/errors' unless response.cache_control[:public] %>

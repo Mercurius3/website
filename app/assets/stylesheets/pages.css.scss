@@ -29,8 +29,8 @@ body {
 p.meta, hr { color: $light; }
 
 /*************** Header and logo ***************/
-/*#horizon { @include background-image(linear-gradient(left, color-stops(lighten($full, 30%), $full))); } */
-#horizon { background-color: $full; }
+#horizon { background: -webkit-linear-gradient(left, lighten($full, 50%), darken($full,10%)); }
+/*#horizon { background-color: $full; }*/
 #logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
 #logo { position: relative; left: 17%; top: 0%; width: 83%;
   h1 { position: relative; left: -12%; padding-top: 2.7em; }
@@ -71,6 +71,12 @@ a:hover, a:active { color: white; }
   ul { list-style-type: disc; }
 }
 
+/* sidebar */
+#sidebar {
+  ul { text-decoration: none; margin-left: 0; list-style-type: none; padding-right: 1em; }
+  li { background-color: $full; margin-bottom: 1em; padding: 0.5em 0;}
+  a { color: white; padding-top: 0.5em; padding: 0.5em; }
+}
 /* meta */
 .meta { text-align: right; }
 ul.meta { list-style-type: none; text-align: right;

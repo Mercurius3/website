@@ -1,0 +1,7 @@
+<ul>
+  <% if @nav %>
+    <% @nav.each do |nav| %>
+      <li><%= link_to nav.name, nav %></li>
+    <% end %>
+  <% end %>
+</ul>

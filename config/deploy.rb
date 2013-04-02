@@ -40,7 +40,7 @@ task :create_symlinks do
 end
 
 task :seed do
-  run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=production && touch tmp/restart.txt"
+  run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=#{:rails_env} && touch tmp/restart.txt"
 end
 
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
