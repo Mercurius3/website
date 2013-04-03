@@ -13,7 +13,9 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   test "Should not save message without user" do
-    @message.user = nil
+    puts @message.inspect
+    @message.user_id = nil
+    puts @message.inspect
     assert !@message.save, "Saved message without user"
   end
 

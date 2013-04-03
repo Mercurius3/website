@@ -3,7 +3,7 @@ class PagesController < InheritedResources::Base
 
   # caches_page :show
   def show
-    @nav = Product.all
+    @categories = Category.all
     @page = Page.find_by_permalink!(params[:id])
     # if stale? etag: @page, last_modified: @page.updated_at
     expires_in 4.weeks

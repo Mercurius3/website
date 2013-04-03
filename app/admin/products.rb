@@ -6,25 +6,26 @@ ActiveAdmin.register Product do
 
   index do
     sortable_handle_column # inserts a drag handle
+    column :category
     column :name
     column :location
     column :teacher
     default_actions
   end
 
-  show do
-    h3 product.name
-    product.events.each do |event|
-      div do
-        "#{event.name}, #{event.datetime}"
-      end
-    end
-    product.users.each do |user|
-      div do
-        user.email
-      end
-    end
-  end
+  # show do
+  #   h3 product.name
+  #   product.events.each do |event|
+  #     div do
+  #       "#{event.name}, #{event.datetime}"
+  #     end
+  #   end
+  #   product.users.each do |user|
+  #     div do
+  #       user.email
+  #     end
+  #   end
+  # end
 
-  form :partial => "form"
+  # form :partial => "form"
 end

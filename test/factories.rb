@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :product do
     name "Museumgroep"
     content "Dit is een voorbeeld van een product."
+    category
   end
 
   factory :user do
@@ -20,5 +21,13 @@ FactoryGirl.define do
   factory :message do
     content "Nieuw bericht"
     user
+  end
+
+  factory :category do
+    name "Rondleiding"
+  end
+
+  factory :page do
+    id "Home"
   end
 end

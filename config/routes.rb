@@ -6,12 +6,13 @@ Website::Application.routes.draw do
   match 'aanmelden' => 'subscriptions#new'
   match 'contact' => 'messages#new'
 
-  resources :subscriptions, :only => [:new, :create]
-  resources :products, :only => [:index, :show]
-  resources :pages, :only => :show
-  resources :messages, :only => [:new, :create]
+  resources :subscriptions, only: [:new, :create]
+  resources :products, only: [:index, :show]
+  resources :pages, only: :show
+  resources :messages, only: [:new, :create]
   resources :users, only: [:new, :create, :edit]
   resources :events, only: [:index, :show]
+  resources :categories, only: [:index, :show]
 
   ActiveAdmin.routes(self)
 

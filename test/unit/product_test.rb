@@ -16,4 +16,9 @@ class ProductTest < ActiveSupport::TestCase
     @product.content = nil
     assert !@product.save, 'Saved product without content'
   end
+
+  test "product should have category" do
+    @product.category = nil
+    assert !@product.save, 'Saved product without category'
+  end
 end

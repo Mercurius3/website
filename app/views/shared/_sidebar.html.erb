@@ -1,7 +1,7 @@
 <ul>
-  <% if @nav %>
-    <% @nav.each do |nav| %>
-      <li><%= link_to nav.name, nav %></li>
+  <% if @categories %>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category %></li>
     <% end %>
   <% end %>
 </ul>
