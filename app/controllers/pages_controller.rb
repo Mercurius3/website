@@ -1,19 +1,19 @@
 class PagesController < InheritedResources::Base
   # include Mobylette::RespondToMobileRequests
 
-  caches_page :show
   def show
     @categories = Category.all
     @page = Page.find_by_permalink!(params[:id])
-    if stale? etag: @page, last_modified: @page.updated_at
-    expires_in 4.weeks
-    if stale? @page, public: true
-      respond_to do |format|
-        format.html # show.html.erb
-        format.mobile #show.mobile.erb
-        format.json { render json: @page }
-      end
-    end
+    # fresh_when etag: @page
+    # if stale? etag: @page, last_modified: @page.updated_at
+    # expires_in 4.weeks
+    # if stale? @page, public: true
+    #   respond_to do |format|
+    #     format.html # show.html.erb
+    #     format.mobile #show.mobile.erb
+    #     format.json { render json: @page }
+    #   end
+    # end
   end
 
   def switch_mobile_view
