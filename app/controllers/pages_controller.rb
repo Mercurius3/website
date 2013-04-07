@@ -2,7 +2,6 @@ class PagesController < InheritedResources::Base
   # include Mobylette::RespondToMobileRequests
 
   def show
-    @categories = Category.all
     @page = Page.find_by_permalink!(params[:id])
     # fresh_when etag: @page
     # if stale? etag: @page, last_modified: @page.updated_at
