@@ -10,7 +10,7 @@
     ExpiresByType application/javascript "access plus 1 week"
     ExpiresByType application/x-javascript "access plus 1 week"
     ExpiresByType image/x-icon "access plus 1 year"
-    ExpiresByType image/ico "access plus 1 years"
+    ExpiresByType image/ico "access plus 1 year"
 </IfModule>
 
 Header unset ETag
