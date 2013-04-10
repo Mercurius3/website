@@ -16,16 +16,18 @@ class Product < ActiveRecord::Base
   include Icalendar
 
   def to_ics
+    product = self
     cal = Calendar.new
-    cal.custom_property("X-WR-CALNAME;VALUE=TEXT", self.name)
+    cal.custom_property("X-WR-CALNAME;VALUE=TEXT", product.name)
     cal.prodid "-//#{self.name}//EN"
-    self.events.each do |e|
+    product.events.each do |e|
       cal.event do
-        uid "#{e.id}@www.lassche-lassche.nl"
+        uid "#{product.name}#{e.id}@www.lassche-lassche.nl"
         sequence DateTime.now.to_i
         dtstart e.datetime.strftime("%Y%m%dT%H%M%SZ")
         dtend (e.datetime + e.duration).strftime("%Y%m%dT%H%M%SZ")
-        summary "#{e.name}"
+        summary "#{product.name} | #{e.name}"
+        url Rails.application.routes.url_helpers.events_url(e, host: "www.staging.lassche-lassche.nl")
       end
     end
     cal.to_ical

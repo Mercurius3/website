@@ -25,3 +25,4 @@
 /.powrc
 
 # Ignore public assets files
+.zeus.sock

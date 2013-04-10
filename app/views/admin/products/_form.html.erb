@@ -1,5 +1,6 @@
 <%= semantic_form_for [:admin, @product] do |f| %>
   <%= f.inputs do %>
+    <%= f.input :category, as: :select %>
     <%= f.input :name %>
     <%= f.input :content %>
     <%= f.input :location %>
