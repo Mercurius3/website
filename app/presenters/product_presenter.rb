@@ -32,10 +32,8 @@ class ProductPresenter < BasePresenter
 
   def events
     content = ""
-    content << div_for(product.events) do |event|
-      content_tag(:h2, event.name)
-      content_tag(:p, (l event.datetime, format: :short), class: "meta")
-      content_tag(:p, event.duration, class: "meta")
+    content_tag_for(:ul, product.events) do |event|
+      content << content_tag(:li, link_to("#{event.name} : #{l event.datetime, format: :short} - #{l (event.datetime + event.duration), format: :time}", event), class: "meta")
     end
     raw content
   end
