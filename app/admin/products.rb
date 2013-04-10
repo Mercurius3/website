@@ -13,19 +13,19 @@ ActiveAdmin.register Product do
     default_actions
   end
 
-  # show do
-  #   h3 product.name
-  #   product.events.each do |event|
-  #     div do
-  #       "#{event.name}, #{event.datetime}"
-  #     end
-  #   end
-  #   product.users.each do |user|
-  #     div do
-  #       user.email
-  #     end
-  #   end
-  # end
+  show do
+    h3 product.name
+    product.events.each do |event|
+      div do
+        "#{event.name}, #{event.datetime}"
+      end
+    end
+    product.users.each do |user|
+      div do
+        user.email
+      end
+    end
+  end
 
-  # form :partial => "form"
+  form :partial => "form"
 end

@@ -1,5 +1,6 @@
 class ProductPresenter < BasePresenter
   presents :product
+  include Icalendar
 
   def product_link
     link_to(product.name, product)
@@ -38,5 +39,4 @@ class ProductPresenter < BasePresenter
     end
     raw content
   end
-
 end

@@ -7,6 +7,8 @@
   <%= product_presenter.teacher %>
   <%= product_presenter.events %>
 </div>
+<%= link_to "Subscribe", product_path(protocol: "webcal", only_path: false, format: :ics) %>
+<%= link_to "Subscribe", calendar_feed_path(protocol: "webcal", only_path: false, format: :ics) %>
 <% end %>
 <%= link_to 'Aanmelden', new_subscription_path(product_id: @product.id) %>
 <%= link_to 'Back', products_path %>
