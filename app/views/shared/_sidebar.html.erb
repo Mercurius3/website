@@ -1,6 +1,6 @@
 <% cache 'categories_menu' do %>
 <ul>
-  <% Category.all.each do |category| %>
+  <% Category.order("position_asc") do |category| %>
     <li><%= link_to category.name, category %></li>
   <% end %>
 </ul>

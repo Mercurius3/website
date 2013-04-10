@@ -8,7 +8,7 @@ $pink: #8F3481;
 $font: #333;
 $light: #444;
 $margin-percent: 2%;
-$column1: 20%;
+$column1: 25%;
 $column2: 45%;
 $column3: 35% ;
 $line-height:1.5;
@@ -23,9 +23,6 @@ body {
     font-family: CallunaSans-Regular;
     font-weight: normal;
     font-style: normal;
-    /*font-family: "Lucida Bold", 'Lucida Bright', Georgia, 'Times New Roman', Times, serif;*/
-    /*font: 60px/68px 'BevanRegular', Arial, sans-serif; letter-spacing: 0;*/
-
     font-size: 2em;
   }
   h2 {
@@ -62,7 +59,7 @@ p.meta, hr { color: $light; }
 }
 
 /* this line should not be necessary */
-h1 a:link, h1 a:visited { color: black;}
+h1 a:link, h1 a:visited { color: black; }
 
 
 /* Links Love Hate*/
@@ -71,13 +68,15 @@ a:hover, a:active { color: white; }
 
 
 /********* Main *********/
-#main { margin: 0 auto; max-width: 1024px; }
-.column { width: 50%; float: left;
+#main { margin: 0 auto; max-width: 1024px; float: left;
   ul { list-style-type: disc; }
 }
 
+#content { width: $column2; float: left;}
+
 /* sidebar */
 #sidebar {
+  width: $column1; float: left;
   ul { text-decoration: none; margin-left: 0; list-style-type: none; padding-right: 1em; }
   li { background-color: $full; margin-bottom: 1em; padding: 0.5em 0; text-transform: uppercase;}
   a { color: white; padding-top: 0.5em; padding: 0.5em; text-decoration: none; }

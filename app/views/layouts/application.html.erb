@@ -10,10 +10,10 @@
   <body id="horizon">
     <%= render 'shared/header' %>
     <div id="main" class="cf">
-      <section id="sidebar" class="column">
+      <section id="sidebar">
         <%= render 'shared/sidebar' %>
       </section>
-      <section id="content" class="column">
+      <section id="content">
         <%= render 'shared/errors' unless response.cache_control[:public] %>
         <%= yield %>
         <%= render 'shared/video' if params[:id] == 'home' %>
