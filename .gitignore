@@ -22,6 +22,7 @@
 
 # Ignore rvm
 /.rvmrc
+/.ruby-version
 /.powrc
 
 # Ignore public assets files
