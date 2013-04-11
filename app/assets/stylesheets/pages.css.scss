@@ -42,8 +42,7 @@ p.meta, hr { color: $light; }
   }
 }
 
-#tagline { position: absolute; left: 55%; top: 1.5em; width: 45%;
-  line-height: 130%; font-style: italic; text-indent: 1em; font-size: 14px;
+p#tag { position: absolute; left: 55%; top: 1.5em; width: 45%; line-height: 130%; font-style: italic; text-indent: 1em; font-size: 14px;
   span { color: $full }
 }
 
