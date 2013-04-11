@@ -32,7 +32,6 @@ p.meta, hr { color: $light; }
 
 /*************** Header and logo ***************/
 #horizon { background: -webkit-linear-gradient(left, lighten($full, 50%), darken($full,10%)); }
-/*#horizon { background-color: $full; }*/
 #logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
 #logo { position: relative; left: 17%; top: 0%; width: 83%;
   h1 { position: relative; left: -12%; padding-top: 2.7em; }
@@ -92,7 +91,7 @@ label, input, textarea { }
 .field { margin-bottom: $margin; }
 
 /********** Footer ************/
-footer { padding-left: $margin; color: $light; }
+footer { padding-left: $margin; color: $light; float: left; }
 
 /* ie6 */
 .ie6 {
