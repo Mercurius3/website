@@ -31,6 +31,7 @@ namespace :deploy do
   after "deploy", "deploy:cleanup"
 
   task :seed do
+    #TODO check if rails_env works correctly
     run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=#{rails_env} && touch tmp/restart.txt"
   end
 
