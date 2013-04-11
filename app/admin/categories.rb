@@ -7,7 +7,6 @@ ActiveAdmin.register Category do
   index do
     sortable_handle_column # inserts a drag handle
     column :name
-    column :position
     default_actions
   end
 
