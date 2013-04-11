@@ -29,6 +29,11 @@ namespace :deploy do
   before "deploy:assets:precompile", :create_symlinks
   # after "deploy:create_symlink", :update_database_yml
   after "deploy", "deploy:cleanup"
+
+  task :seed do
+    run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=#{:rails_env} && touch tmp/restart.txt"
+  end
+
 end
 
 # Create symbolic links to shared files on server containing sensitive information like passwords
@@ -39,9 +44,6 @@ task :create_symlinks do
   # run "ln -nfs #{deploy_to}/shared/config/newrelic.yml #{release_path}/config/newrelic.yml"
 end
 
-task :seed do
-  run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=#{:rails_env} && touch tmp/restart.txt"
-end
 
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.

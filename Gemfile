@@ -17,7 +17,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do
+group :production, :staging do
   gem 'libv8', '~> 3.11.8.4'
   gem 'therubyracer'
   gem 'execjs'
