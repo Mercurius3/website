@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
 
   attr_accessible :datetime, :duration, :name, :product_id
 
+  validates_presence_of :name
+
   belongs_to :product
 
   # Convert to iCalendar

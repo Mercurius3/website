@@ -9,9 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require lasscheenlassche
  *= require normalize
  *= require clearfix
- *= require myfontswebfontskit
  *= require graphics
  *= require fonts
  *= require pages
