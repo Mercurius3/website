@@ -17,6 +17,8 @@
       <section id="content">
         <%= render 'shared/errors' unless response.cache_control[:public] %>
         <%= yield %>
+      </section>
+      <section id="right_sidebar">
         <%= render 'shared/video' if params[:id] == 'home' %>
       </section>
     </div>

@@ -9,8 +9,8 @@ $font: #333;
 $light: #444;
 $margin-percent: 2%;
 $column1: 25%;
-$column2: 45%;
-$column3: 35% ;
+$column2: 44%;
+$column3: 33% ;
 $line-height:1.5;
 $margin: 1.5em;
 
@@ -82,6 +82,9 @@ a:hover, a:active { color: white; }
   ul { text-decoration: none; margin-left: 0; list-style-type: none; padding-right: 1em; }
   li { background-color: $full; margin-bottom: 1em; padding: 0.5em 0; text-transform: uppercase;}
   a { color: white; padding-top: 0.5em; padding: 0.5em; text-decoration: none; }
+}
+#sidebar_right {
+  width: $column3; float: left;
 }
 /* meta */
 .meta { text-align: right; }
