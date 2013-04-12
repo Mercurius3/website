@@ -17,13 +17,18 @@ $margin: 1.5em;
 /* Typography */
 body {
   line-height: $line-height;
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+}
+h1, h2, h3 {
+  font-size: 1em;
+}
+
 #logo
   h1 {
     font-family: Lucida-Bol;
     font-weight: normal;
     font-style: normal;
-    font-size: 1.6em;
+    font-size: 1.7em;
     letter-spacing: 1px;
   }
   h2 {
@@ -35,21 +40,19 @@ p.meta, hr { color: $light; }
 #horizon { background: -webkit-linear-gradient(left, lighten($full, 50%), darken($full,10%)); }
 #logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
 #logo { position: relative; left: 17%; top: 0%; width: 83%;
-  h1 { position: relative; left: -12%; padding-top: 2.7em; }
+  h1 { position: relative; left: -14%; padding-top: 2.7em; }
   h2 { position: relative; font-weight: normal; font-size: 1.2em; left: 10%; padding-top: 0.4em; width: 60%; }
   a { color: #373535; text-decoration: none;
     span { color: $full }
   }
 }
 
-p#tag { position: absolute; left: 55%; top: 1.5em; width: 45%; line-height: 130%; font-style: italic; text-indent: 1em; font-size: 14px;
+p#tag { position: absolute; left: 55%; top: 1.5em; width: 45%; line-height: 130%; font-style: italic; text-indent: 1em; font-size: 20px; font-weight: bold;
   span { color: $full }
 }
 
 #main_nav {
-  margin-top: 10%;
-//    position: relative; left: $column1; width: $column2+$column3;
-  ul { list-style: none; }
+  ul { list-style: none; margin-top: 4em; margin-left: $column1; }
   li {
     float: left; margin-right: $margin;
     font-weight: bold; text-shadow: 0.1em 0.1em #333;
@@ -67,7 +70,7 @@ a:hover, a:active { color: white; }
 
 
 /********* Main *********/
-#main { margin: 0 auto; max-width: 1024px; float: left;
+#main { margin: 0 auto; max-width: 1024px;
   ul { list-style-type: disc; }
 }
 
