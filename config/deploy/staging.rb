@@ -1,2 +1,2 @@
-set :rails_env, "staging"
+set(:rails_env) { "staging" }
 set :branch, 'staging'
