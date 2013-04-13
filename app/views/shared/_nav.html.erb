@@ -1,7 +1,7 @@
 <nav id="main_nav" class="clearfix">
   <ul>
-    <li><%= link_to_unless_current "Home", root_path, { "data-ajax" => false } %></li>
-    <li><%= link_to_unless_current "Aanmelden", aanmelden_path, { "data-ajax" => false } %></li>
-    <li><%= link_to_unless_current "Contact", contact_path, { "data-ajax" => false } %></li>
+    <% @page_nav.each do |page| %>
+      <li><%= link_to_unless_current page.name, page %></li>
+    <% end %>
   </ul>
 </nav>

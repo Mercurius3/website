@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :set_nav_var
 
   # include Mobylette::RespondToMobileRequests
   # mobylette_config do |config|
@@ -10,6 +11,8 @@ class ApplicationController < ActionController::Base
   # end
   I18n.locale = :nl
 
+
+
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :render_500
     rescue_from ActionController::RoutingError, with: :render_404
@@ -19,6 +22,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def set_nav_var
+    @page_nav = Page.order("position")
+  end
 
   def render_404(exception)
     @not_found_path = exception.message
