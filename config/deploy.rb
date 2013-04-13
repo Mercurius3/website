@@ -1,3 +1,6 @@
+set :stages, %w(staging production)
+set :default_stage, "staging"
+
 require 'bundler/capistrano'
 require 'rvm/capistrano'
 require 'capistrano/ext/multistage'
@@ -8,9 +11,6 @@ set :application, "website"
 # Gegevens van de Bluerail server
 set :host, "mushu.bluerail.nl"
 set :user, "lassche"
-
-set :stages, %w(staging production)
-set :default_stage, "staging"
 
 # Versiebeheer instellingen
 set :scm, :git  # Of 'subversion', 'mercurial' , etc.
