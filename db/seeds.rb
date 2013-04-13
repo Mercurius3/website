@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # user = AdminUser.create :email => 'user@example.com', :password => 'please'
-category = Category.create name: 'Test', position: '1'
+# category = Category.create name: 'Test', position: '1'
+page = Page.create name: 'Home', position: '1', slug: 'home', content: 'Dit is de home page'

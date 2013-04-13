@@ -25,7 +25,7 @@ namespace :deploy do
   task :restart, roles: :app, except: { no_release: true } do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}"
   end
-
+  puts "Deploying to: #{deploy_to}, current_path: #{current_path}, rails_env: #{rails_env}"
   before "deploy:assets:precompile", :create_symlinks
   # after "deploy:create_symlink", :update_database_yml
   after "deploy", "deploy:cleanup"
