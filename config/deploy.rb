@@ -1,6 +1,9 @@
+set :stages, %w(production staging)
+set :default_stage, "staging"
+
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-# require 'capistrano/ext/multistage'
+require 'capistrano/ext/multistage'
 
 set :application, "website"
 
@@ -18,7 +21,7 @@ set :repository,  "git@github.com:Mercurius3/website.git"
 # De onderstaande instellingen zijn specifiek voor de Bluerail servers, u
 # hoeft hier zelf geen wijzigingen in aan te brengen.
 # set :deploy_to, lambda { capture("echo -n ~/rails") }
-set :deploy_to, lambda { capture("echo -n ~/staging") }
+# set :deploy_to, lambda { capture("echo -n ~/staging") }
 # set :rvm_type, :system
 set :rvm_path, '/usr/local/rvm'
 set :rvm_bin_path, '/usr/local/rvm/bin'
@@ -39,7 +42,7 @@ namespace :deploy do
   before "deploy:assets:precompile", :create_symlinks
   after "deploy", "deploy:cleanup"
   task :seed do
-    run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=staging && touch tmp/restart.txt"
+    run "cd #{deploy_to}/current && bundle exec rake db:seed RAILS_ENV=#{rails_env} && touch tmp/restart.txt"
   end
 end
 

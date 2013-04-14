@@ -1,2 +1,1 @@
-set :rails_env, 'staging'
-set :branch, 'master'
+set :deploy_to, lambda { capture("echo -n ~/staging") }

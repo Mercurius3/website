@@ -1,2 +1,1 @@
-set :rails_env, 'production'
-set :branch, 'production'
+set :deploy_to, lambda { capture("echo -n ~/rails") }
