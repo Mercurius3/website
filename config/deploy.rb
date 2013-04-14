@@ -1,8 +1,8 @@
 set :stages, %w(staging production)
 set :default_stage, "staging"
 
-require 'bundler/capistrano'
-require 'rvm/capistrano'
+# require 'bundler/capistrano'
+# require 'rvm/capistrano'
 require 'capistrano/ext/multistage'
 
 # De naam van uw applicatie
