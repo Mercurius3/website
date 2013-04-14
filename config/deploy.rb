@@ -6,8 +6,9 @@ set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
 # De naam van uw applicatie
-set :application, "website"
 
+set :application, "website"
+# set(:rails_env) { fetch(:stage) }
 set(:deploy_to)         { "/var/www/vhosts/lassche-lassche.nl/#{rails_env}" }
 set(:releases_path)     { File.join(deploy_to, version_dir) }
 set(:shared_path)       { File.join(deploy_to, shared_dir) }
