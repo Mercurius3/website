@@ -21,6 +21,7 @@ set :rvm_ruby_string, 'default'
 set :deploy_to,"/var/www/vhosts/lassche-lassche.nl/rails"
 set :rvm_type, :system
 set :rvm_bin_path, '/usr/local/rvm/bin'
+set :rvm_path, '/user/local/rvm'
 set :use_sudo, false
 set :keep_releases, 1
 
