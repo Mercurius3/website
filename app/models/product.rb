@@ -1,10 +1,12 @@
 class Product < ActiveRecord::Base
-  attr_accessible :active, :content, :location, :name, :position, :price, :teacher, :subscriptions_attributes, :events_attributes, :category_id
+  attr_accessible :active, :content, :location, :name, :position, :price, :teacher, :picture, :subscriptions_attributes, :events_attributes, :category_id
 
   validates_uniqueness_of :position
   validates_presence_of :name, :content, :category_id
 
   acts_as_list
+
+  mount_uploader :picture, PictureUploader
 
   has_many :subscriptions
   has_many :users, through: :subscriptions

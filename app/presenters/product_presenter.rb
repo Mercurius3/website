@@ -30,6 +30,10 @@ class ProductPresenter < BasePresenter
     l(product.events.first.datetime, format: :short)
   end
 
+  def picture
+    image_tag(product.picture_url.to_s)
+  end
+
   def events
     content = ""
     content_tag_for(:ul, product.events) do |event|

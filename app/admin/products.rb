@@ -15,6 +15,9 @@ ActiveAdmin.register Product do
 
   show do
     h3 product.name
+    #TODO show content & picture
+    div product.content
+    div image_tag product.picture_url.to_s
     product.events.each do |event|
       div do
         "#{event.name}, #{event.datetime}"

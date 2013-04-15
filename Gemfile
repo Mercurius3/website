@@ -58,7 +58,6 @@ gem 'icalendar'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-
 # To use debugger
 # gem 'debugger'
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -67,7 +66,7 @@ gem 'acts_as_list'
 # gem 'markdownpages', path: '../markdownpages'
 gem 'kramdown'
 
-gem 'mobylette'
+# gem 'mobylette'
 gem 'jquery_mobile_rails'
 
 gem 'capistrano'
@@ -82,3 +81,4 @@ gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record'
 gem 'i18n', '~> 0.6.4'
+gem 'carrierwave'

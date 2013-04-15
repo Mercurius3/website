@@ -1,4 +1,4 @@
-<%= semantic_form_for [:admin, @product] do |f| %>
+<%= semantic_form_for [:admin, @product], html: {multipart: true} do |f| %>
   <%= f.inputs do %>
     <%= f.input :category, as: :select %>
     <%= f.input :name %>
@@ -7,7 +7,7 @@
     <%= f.input :teacher %>
     <%= f.input :active %>
     <%= f.input :price %>
-    <%= f.input :position %>
+    <%= f.file_field :picture %>
     <h3>Events</h3>
     <div id="events">
       <%= f.semantic_fields_for :events do |event| %>
