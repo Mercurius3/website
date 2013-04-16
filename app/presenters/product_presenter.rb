@@ -31,7 +31,7 @@ class ProductPresenter < BasePresenter
   end
 
   def picture
-    image_tag(product.picture_url.to_s)
+    image_tag(product.picture_url(:thumb).to_s)
   end
 
   def events
