@@ -4,7 +4,12 @@ class ProductTest < ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
   def setup
-    @product = build(:product)
+    @product = build(:product_with_events)
+  end
+
+  test "product should have event" do
+    puts @product.events.first.name
+    assert_not_nil @product.events
   end
 
   test "product should have name" do

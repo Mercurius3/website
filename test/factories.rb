@@ -6,17 +6,24 @@ FactoryGirl.define do
     product
   end
 
-  # factory :product do
-  #   name "Museumgroep"
-  #   content "Dit is een voorbeeld van een product."
-  #   category
-  # end
-
   factory :event do
     name "Les 1"
     datetime Time.now
     duration 3600
     # location 'Zijlkwartier'
+    product
+  end
+
+  factory :product do
+    name "Museumgroep"
+    content "Dit is een voorbeeld"
+    category
+    factory :product_with_events do
+      after(:build) do |product|
+        FactoryGirl.create(:event, product: product)
+      end
+    end
+
   end
 
   factory :user do
@@ -37,14 +44,5 @@ FactoryGirl.define do
 
   factory :page do
     id "Home"
-  end
-
-  factory :product do
-    name "Museumgroep"
-    content "Dit is een voorbeeld"
-    category
-    after_create do |product|
-      FactoryGirl.create(:event, product: product)
-    end
   end
 end
