@@ -1,5 +1,5 @@
 class SubscriptionsController < InheritedResources::Base
-  respond_to :html, :xml, :json, :mobile
+  # respond_to :html, :xml, :json, :mobile
 
   def new
     @subscription = Subscription.new
