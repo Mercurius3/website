@@ -63,9 +63,9 @@ gem 'icalendar'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'activeadmin-sortable'
 gem 'acts_as_list'
-# gem 'markdownpages', path: '../markdownpages'
 gem 'kramdown'
 
+gem 'normalize-rails'
 # gem 'mobylette'
 gem 'jquery_mobile_rails'
 
@@ -80,6 +80,5 @@ gem 'cocoon'
 gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record'
-gem 'i18n', '~> 0.6.4'
 gem 'carrierwave'
 gem "rmagick"

@@ -1,0 +1,9 @@
+<% cache 'categories_menu' do %>
+  <section id="sidebar">
+    <ul>
+      <% Category.order('position').each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

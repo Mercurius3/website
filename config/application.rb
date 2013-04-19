@@ -62,11 +62,6 @@ module Website
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # config.action_controller.asset_host = "https://s3-eu-west-1.amazonaws.com/lasscheeu"
-
-    # config.assets.paths << "#{Rails.root}/app/assets/fonts"
-    # config.assets.paths << "#{Rails.root}/app/assets/videos"
-
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
       config.assets.precompile += %w( *.mobile.* *.svg *.eot *.woff *.ttf *.mp4 *.webm)
 

@@ -3,26 +3,22 @@
   <head>
     <meta charset="utf-8">
     <%= render 'shared/title' %>
-    <%= favicon_link_tag  %>
+    <%= favicon_link_tag %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags unless response.cache_control[:public] %>
   </head>
   <body id="horizon">
-    <%= render 'shared/header' %>
+    <%= render 'layouts/header' %>
     <%= render 'shared/nav' %>
     <div id="main" class="clearfix">
-      <section id="sidebar">
-        <%= render 'shared/sidebar' %>
-      </section>
+      <%= render 'layouts/sidebar' %>
+      <%= render 'shared/errors' unless response.cache_control[:public] %>
       <section id="content">
-        <%= render 'shared/errors' unless response.cache_control[:public] %>
         <%= yield %>
       </section>
-      <section id="right_sidebar">
-        <%= render 'shared/video' if params[:id] == 'home' %>
-      </section>
+      <%= render 'layouts/right_sidebar' %>
     </div>
     <%= render 'shared/footer' %>
-    <%= javascript_include_tag "application", :defer => "defer" %>
   </body>
 </html>
