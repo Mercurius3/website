@@ -47,8 +47,8 @@ Website::Application.configure do
   config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3-eu-west-1.amazonaws.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
-   config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf .mp4 .webm)
+  config.assets.precompile += %w( html5shiv.js )
+  config.assets.precompile += %w( *.mobile.* .svg .eot .woff .ttf .mp4 .webm)
    #.svg .eot .woff .ttf .mp4 & .webm should be redundant, but let's see.
 
   # Disable delivery errors, bad email addresses will be ignored

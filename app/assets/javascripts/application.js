@@ -23,4 +23,3 @@
 //= reqiore IE7
 //= require IE8
 //= require mediaelement_rails
-//= require html5shiv
