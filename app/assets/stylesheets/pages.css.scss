@@ -2,110 +2,136 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* reset (things that normalize doesn't do) */
+nav ul { padding: 0; margin: 0; }
+
 /* Variables */
+$margin: 2.5%;              /* 20px/800px */
+$column1: 15.875%;          /* 127px/800px */
+$column2: 45.625%;          /* 365px/800px */
+$column3: 21.25%;           /* 170px/800px */
 $full: #e97438;
 $pink: #8F3481;
 $font: #333;
 $light: #444;
-$margin-percent: 2%;
-$column1: 25%;
-$column2: 44%;
-$column3: 33% ;
-$line-height:1.5;
-$margin: 1.5em;
 
 /* Typography */
+html { font-size: 16px;}
 body {
-  line-height: $line-height;
+  position: relative;
+  font-size: 62.5%;
   font-family: Arial, sans-serif;
+  color: $font;
 }
-h1, h2, h3 {
-  font-size: 1em;
-}
-
-#logo {
-  h1 {
-    font-family: Lucida-Bol;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.7em;
-    letter-spacing: 1px;
-  }
-  h2 {
-    font-style: italic;
-  }
+h1 { font-size: 1em; font-weight: bold; }
+p#title {
+  font-family: Lucida-Bol;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.7em;
+  letter-spacing: 1px;
+  a { text-decoration: none; }
 }
 p.meta, hr { color: $light; }
 
+a { text-decoration: none; }
+
 /*************** Header and logo ***************/
-#horizon { background: -webkit-linear-gradient(left, lighten($full, 50%), darken($full,10%)); }
-#logo, #logo h1, #logo h2 { padding: 0; margin: 0; line-height: 1; }
-#logo { position: relative; left: 17%; top: 0%; width: 83%;
-  h1 { position: relative; left: -14%; padding-top: 2.7em; }
-  h2 { position: relative; font-weight: normal; font-size: 1.2em; left: 10%; padding-top: 0.4em; width: 60%; }
-  a { color: #373535; text-decoration: none;
-    span { color: $full }
+
+#horizon { 
+  position: relative;
+  background: $full; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkNjU4MTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left, #ffffff 0%, #d65818 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(100%,#d65818)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #ffffff 0%,#d65818 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #ffffff 0%,#d65818 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #ffffff 0%,#d65818 100%); /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%,#d65818 100%); /* W3C */
+//  -pie-background: linear-gradient(to right, #ffffff, #d65818); /*ie 6-9 via PIE*/
+//  behavior: url(/assets/PIE.htc);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d65818',GradientType=1 ); /* IE6-8 */
   }
+#title { position: absolute; width: 100%; height: 180px;
+  a { position: absolute; left: 0; top: 70px; color: $font; }
 }
 
-p#tag { position: absolute; left: 55%; top: 1.5em; width: 45%; line-height: 130%; font-style: italic; text-indent: 1em; font-size: 20px; font-weight: bold;
-  span { color: $full }
+/*TODO: rename*/
+#logo { position: relative; top: 10px; left: 5%;
+//  p { position: relative; top: 15px; font-size: 1.8em; }
+  span { color: $full; }
+}
+#logo_extra { position: absolute; top: 115px; left: 160px; font-style: italic; font-weight: 100; }
+#tagline { position: absolute; top: 55px; right: 35%; font-style: italic; text-indent: 1em; 
+  span { color: $full; }
 }
 
-#main_nav {
-  ul { list-style: none; margin-top: 4em; margin-left: $column1; }
-  li {
-    float: left; margin-right: $margin; color: $pink;
-    background-color: $full; color: white; text-transform: uppercase;
-    a { text-decoration: none; color: white; }
-  }
+/********* Wrapper *********/
+#wrapper {
+  margin: 200px auto 0 auto;
+  width: 90%;
 }
 
-/* this line should not be necessary */
-h1 a:link, h1 a:visited { color: black; }
-
-
-/* Links Love Hate*/
-/*a:link, a:visited { color: white; }
-a:hover, a:active { color: $pink; }*/
-
-
-/********* Main *********/
-#main { margin: 0 auto; max-width: 1024px;
-  ul { list-style-type: disc; }
-}
-
-#content { width: $column2; float: left;}
-
-/* sidebar */
+/********* Columns *********/
 #sidebar {
-  width: $column1; float: left;
-  ul { text-decoration: none; margin-left: 0; list-style-type: none; padding-right: 1em; }
-  li { background-color: $full; margin-bottom: 1em; padding: 0.5em 0; text-transform: uppercase; }
-  a { padding-top: 0.5em; padding: 0.5em; text-decoration: none; }
+  width: $column1;
+  float: left;
 }
-#sidebar_right {
-  width: $column3; float: left;
+#content {
+  width: $column2;
+  margin-left: $margin;
+  float: left;
 }
-/* meta */
-.meta { text-align: right; }
-ul.meta { list-style-type: none; text-align: right;
-  em { font-style: italic; }
+#secondary_sidebar {
+  width: $column3;
+  margin-left: $margin;
+  float: left;
 }
+/* column length fix The Essential Guide to CSS and HTML Web Design, p. 301 TODO: user #wrapper section OR add class names; */
+/*#wrapper { overflow: hidden; }
+#sidebar, #content, #secondary_sidebar { padding-bottom: 32767px !important; margin-bottom: -32767px !important; }*/
 
-/* Form */
-label, input, textarea { }
-.actions input { }
-.field { margin-bottom: $margin; }
+/*********** Nav ************/
+nav {
+  text-transform: uppercase;
+  ul { list-style-type: none; }
+  a { display: block; background-color: $full;
+    position: relative;
+    -moz-border-radius: 5px;
+    -webkist-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(/assets/PIE.htc);
+    box-shadow: darken($full, 20%) 2px 2px 2px;
+}
+  a:link, a:visited { color: white; }
+  a:hover, a:active, a.selected { color: $pink; background-color: lighten($full, 20%);
+    transform: translate(-2px, 2px);
+    ms-transform: translate(-2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    box-shadow: darken($full, 20%) 1px 1px 1px;
+  }
+}
+nav#main_nav {
+  width: 100%-($column1+$margin);
+  margin-left: $column1+$margin;
+  li { margin-right: 1em; display: inline; float: left; }
+  a { padding: 0.5em 1em; }
+}
+nav#sidebar_nav {
+  li { margin: 1em 0;}
+  a { padding: 0.5em 1em; text-align: center; }
+}
 
 /********** Footer ************/
-footer { padding-left: $margin; color: $light; float: left; }
+footer { color: $light; float: left; }
 
-/* ie6 */
-.ie6 {
-  #marketing {
-    position: relative;
-    background-image: image-url("logo_ie.jpg");
-    height: 134px;
-  }
+/* Internet Explorer */
+.ie {
+  #logo { position: absolute; top: 0; float: left; }
+  #logo p { position: absolute; top: 0; }
+  #logo_extra {position: absolute; top: 100px; width: 100%; }
+  #tagline { position: relative; top: 200px; left: 600px; width: 100%; }
+  #wrapper { position: relative; top: -250px; }
+//  #title { background: url("logo_ie.jpg") no-repeat; height: 100px; text-indent: -9999px; }
 }

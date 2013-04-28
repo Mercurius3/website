@@ -1,7 +1,5 @@
-<nav id="main_nav" class="clearfix">
-  <ul>
-    <% @page_nav.each do |page| %>
-      <li><%= link_to_unless_current page.name, page %></li>
-    <% end %>
-  </ul>
-</nav>
+<ul>
+  <% @page_nav.each do |page| %>
+    <li><%= nav_link_to(page.name, page_path(page)) %></li>
+  <% end %>
+</ul>

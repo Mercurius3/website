@@ -156,6 +156,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mediaelement_rails (0.5.1)
+      jquery-rails (>= 1.0)
+      railties (>= 3.1)
     meta_request (0.2.3)
       rack-contrib
       railties
@@ -177,8 +180,8 @@ GEM
       net-ssh (>= 2.6.5)
     newrelic_rpm (3.6.0.83)
     nokogiri (1.5.9)
-    normalize-rails (2.0.1)
     orm_adapter (0.4.0)
+    pie-rails (1.1.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -278,10 +281,11 @@ DEPENDENCIES
   jquery_mobile_rails
   kramdown
   libv8 (~> 3.11.8.4)
+  mediaelement_rails
   meta_request
   mysql2
   newrelic_rpm
-  normalize-rails
+  pie-rails
   rails
   rb-fsevent (~> 0.9)
   rmagick

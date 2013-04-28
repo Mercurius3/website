@@ -30,7 +30,7 @@ module Website
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Amsterdam'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -63,7 +63,7 @@ module Website
     config.assets.version = '1.0'
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-      config.assets.precompile += %w( *.mobile.* *.svg *.eot *.woff *.ttf *.mp4 *.webm)
+      config.assets.precompile += %w( *.mobile.* *.svg *.eot *.woff *.ttf *.mp4 *.webm *.swf)
 
     # Maybe redundant, since this is Sprockets' default location
     # config.assets.prefix = "/assets"

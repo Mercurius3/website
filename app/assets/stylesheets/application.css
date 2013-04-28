@@ -16,4 +16,6 @@
  *= require pages
  *= require simple_form
  *= require formtastic
+ *= require mediaelement_rails
+ *= require mediaelement_rails/mejs-skins
  */

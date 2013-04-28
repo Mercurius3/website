@@ -1,24 +1,51 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>
+<script src="/assets/IE7.js"></script>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<script src="/assets/IE8.js"></script>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<script src="/assets/IE9.js"></script>
+<![endif]-->
+<!--[if lt IE 9]><html class="ie"><%= javascript_include_tag "html5shiv" %><![endif]-->
+<!--[if !IE]><!--><html class=""><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <%= render 'shared/title' %>
     <%= favicon_link_tag %>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags unless response.cache_control[:public] %>
   </head>
   <body id="horizon">
+    <script>
+    // jQuery method
+    $('video').mediaelementplayer();
+    </script>
     <%= render 'layouts/header' %>
-    <%= render 'shared/nav' %>
-    <div id="main" class="clearfix">
-      <%= render 'layouts/sidebar' %>
-      <%= render 'shared/errors' unless response.cache_control[:public] %>
+    <%= render 'shared/errors' unless response.cache_control[:public] %>
+    <div id="wrapper" class="clearfix">
+      <nav id="main_nav" class="clearfix">
+        <%= render 'shared/nav' %>
+      </nav>
+      <section id="sidebar">
+        <nav id="sidebar_nav">
+          <%= render 'layouts/sidebar' %>
+        </nav>
+      </section>
       <section id="content">
         <%= yield %>
       </section>
-      <%= render 'layouts/right_sidebar' %>
+      <section id="secondary_sidebar">
+        <p>Dummy paragraph.</p>
+        <%= render 'layouts/secondary_sidebar' %>
+      </section>
     </div>
-    <%= render 'shared/footer' %>
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>

@@ -14,7 +14,12 @@
 //= require jquery_ujs
 //= require jquery.fittext
 //= require raphael
+//= require MyFontsWebfontsKit
 //= require logo
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require cocoon
+//= require pages
+//= reqiore IE7
+//= require IE8
+//= require mediaelement_rails

@@ -1,1 +1,13 @@
-<%= video_tag("/assets/lassche_eyepitch_640_h264.mp4", controls: true, poster: "lassche-lassche.jpg") %>
+<!-- <%= video_tag("/assets/lassche_eyepitch_640_h264.mp4", controls: true, poster: "/assets/lassche-lassche.jpg", size: '150x135') %> -->
+<!-- first try HTML5 playback: if serving as XML, expand `controls` to `controls="controls"` and autoplay likewise -->
+<!-- warning: playback does not work on iOS3 if you include the poster attribute! fixed in iOS4.0 -->
+<video width="320" height="240" poster="<%= image_path('lassche-lassche.jpg') %>" controls="controls" preload="none">
+      <source type="video/mp4" src="<%= asset_path('lassche_eyepitch_640_h264.mp4') %>" />
+    <!-- <source type="video/webm" src="myvideo.webm" />
+    <source type="video/ogg" src="myvideo.ogv" /> -->
+    <object width="320" height="240" type="application/x-shockwave-flash" data="<%= asset_path('mediaelement_rails/flashmediaelement.swf') %>">
+        <param name="movie" value="<%= asset_path('mediaelement_rails/flashmediaelement.swf') %>" /> 
+        <param name="flashvars" value="controls=true&amp;poster=<%= image_path('lassche-lassche.jpg') %>&amp;file=<%= asset_path('lassche_eyepitch_640_h264.mp4') %>" />        
+        <img src="<%= image_path('lassche-lassche.jpg') %>" width="320" height="240" title="No video playback capabilities" />
+    </object>
+</video>

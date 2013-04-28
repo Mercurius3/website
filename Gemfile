@@ -65,7 +65,6 @@ gem 'activeadmin-sortable'
 gem 'acts_as_list'
 gem 'kramdown'
 
-gem 'normalize-rails'
 # gem 'mobylette'
 gem 'jquery_mobile_rails'
 
@@ -81,4 +80,6 @@ gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record'
 gem 'carrierwave'
-gem "rmagick"
+gem 'rmagick'
+gem 'pie-rails'
+gem 'mediaelement_rails'
