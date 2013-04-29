@@ -1,4 +1,4 @@
-var customPath = "/fonts";
+var customPath = "/";
 var count=document.createElement('script');count.type='text/javascript';count.async=true;count.src='//hello.myfonts.net/count/26c66c';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(count,s);var browserName,browserVersion,webfontType;if(typeof(woffEnabled)=='undefined'){var woffEnabled=true;}
 var svgEnabled=1;if(typeof(customPath)!='undefined'){var path=customPath;}
 else
