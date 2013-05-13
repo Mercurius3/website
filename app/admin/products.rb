@@ -20,7 +20,7 @@ ActiveAdmin.register Product do
     div image_tag product.picture_url.to_s
     product.events.each do |event|
       div do
-        "#{event.name}, #{event.datetime}"
+        "#{event.name}, #{event.starttime}"
       end
     end
     product.users.each do |user|

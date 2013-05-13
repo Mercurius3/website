@@ -1,8 +1,9 @@
 class Event < ActiveRecord::Base
   include Icalendar
 
-  attr_accessible :datetime, :duration, :name, :product_id
+  attr_accessible :event_date, :starttime, :endtime, :name, :product_id
 
+  just_define_time_picker :starttime, :add_to_attr_accessible => true
   validates_presence_of :name
 
   belongs_to :product

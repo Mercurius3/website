@@ -1,8 +1,8 @@
 <div class="nested-fields">
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%= f.input :datetime, :as => :datetime_select %>
-    <%= f.input :duration %>
+    <%= f.input :starttime %>
+    <%= f.input :endtime %>
     <%= link_to_remove_association "remove event", f %>
   <% end %>
 </div>

@@ -27,7 +27,7 @@ class ProductPresenter < BasePresenter
   end
 
   def date
-    l(product.events.first.datetime, format: :short)
+    l(product.events.first.startdate, format: :short)
   end
 
   def picture
@@ -37,7 +37,7 @@ class ProductPresenter < BasePresenter
   def events
     content = ""
     content_tag_for(:ul, product.events) do |event|
-      content << content_tag(:li, link_to("#{event.name} : #{l event.datetime, format: :short} - #{l (event.datetime + event.duration), format: :time}", event), class: "meta")
+      content << content_tag(:li, link_to("#{event.name} : #{l event.startdate, format: :short} - #{l event.enddate, format: :short}", event), class: "meta")
     end
     raw content
   end

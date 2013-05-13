@@ -1,8 +1,7 @@
 Website::Application.routes.draw do
-  match '/products/:id/calendar_feed', to: 'products#calendar_feed', :as => 'calendar_feed'
+  match '/products/:id/calendar_feed', to: 'products#calendar_feed', as: 'calendar_feed'
 
-  match 'switch_mobile_view' => 'pages#switch_mobile_view'
-
+  match '/pages/agenda' => 'events#index', as: 'agenda'
   match 'aanmelden' => 'subscriptions#new'
   match 'contact' => 'messages#new'
 

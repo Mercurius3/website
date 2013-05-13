@@ -27,3 +27,33 @@
 // .active_admin       applies to any Active Admin namespace
 // .admin_namespace    applies to the admin namespace (eg: /admin)
 // .other_namespace    applies to a custom namespace named other (eg: /other)
+
+// css for just-datetime-picker
+body.active_admin .input.just_datetime_picker input.just-datetime-picker-field {
+    width: auto !important;
+}
+
+body.active_admin .input.just_datetime_picker input.just-datetime-picker-date {
+    margin-right: 2ex;
+}
+
+body.active_admin .input.just_datetime_picker input.just-datetime-picker-time-hour {
+    margin-right: 1ex;
+}
+
+body.active_admin .input.just_datetime_picker input.just-datetime-picker-time-minute {
+    margin-left: 1ex;
+}
+
+// css for just-time-picker
+body.active_admin .input.just_time_picker input.just-time-picker-field {
+    width: auto !important;
+}
+
+body.active_admin .input.just_time_picker input.just-time-picker-time-hour {
+    margin-right: 1ex;
+}
+
+body.active_admin .input.just_time_picker input.just-time-picker-time-minute {
+    margin-left: 1ex;
+}

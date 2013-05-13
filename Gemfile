@@ -83,3 +83,5 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'pie-rails'
 gem 'mediaelement_rails'
+gem "just-datetime-picker"
+gem "just-time-picker"

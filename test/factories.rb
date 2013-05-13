@@ -8,8 +8,9 @@ FactoryGirl.define do
 
   factory :event do
     name "Les 1"
-    datetime Time.now
-    duration 3600
+    event_date Date.today
+    starttime Time.now
+    endtime Time.now
     # location 'Zijlkwartier'
     product
   end
