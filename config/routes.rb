@@ -1,4 +1,6 @@
 Website::Application.routes.draw do
+  get "home/index"
+
   match '/products/:id/calendar_feed', to: 'products#calendar_feed', as: 'calendar_feed'
 
   match '/pages/agenda' => 'events#index', as: 'agenda'

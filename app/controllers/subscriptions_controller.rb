@@ -9,6 +9,9 @@ class SubscriptionsController < InheritedResources::Base
 
   def create
     @subscription = Subscription.new(params[:subscription])
+    if User.find_by_email(@subscription.user.email)
+      @subscription.user = User.find_by_email(@subscription.user.email)
+    end
     if @subscription.save
       SubscriptionMailer.subscription_confirmation(@subscription).deliver
       redirect_to root_path, notice: 'Wij hebben uw aanmelding ontvangen!'

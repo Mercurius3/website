@@ -3,11 +3,11 @@ class Event < ActiveRecord::Base
 
   attr_accessible :event_date, :starttime, :endtime, :name, :product_id
 
-  just_define_time_picker :starttime, :add_to_attr_accessible => true
   validates_presence_of :name
 
   belongs_to :product
 
+  # TODO: change to starttime, endtime & event_date
   # Convert to iCalendar
   def to_ics
     event = Icalendar::Event.new

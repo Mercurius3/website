@@ -9,7 +9,7 @@ ActiveAdmin.register Event do
       f.input :product
       f.input :name
       f.input :event_date, as: :date_picker
-      f.input :starttime, as: :just_time_picker
+      f.input :starttime
       f.input :endtime
     end
     f.actions
