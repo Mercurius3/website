@@ -3,9 +3,9 @@ Website::Application.routes.draw do
 
   match '/products/:id/calendar_feed', to: 'products#calendar_feed', as: 'calendar_feed'
 
-  match '/pages/agenda' => 'events#index', as: 'agenda'
-  match 'aanmelden' => 'subscriptions#new'
-  match 'contact' => 'messages#new'
+  match 'agenda' => 'events#index', as: 'agenda'
+  match 'aanmelden' => 'subscriptions#new', as: 'aanmelden'
+  match 'contact' => 'messages#new', as: 'contact'
 
   resources :subscriptions, only: [:new, :create]
   resources :products, only: [:index, :show]
@@ -20,7 +20,7 @@ Website::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   # resources :pages, except: :show
-  # get ':id', to: 'pages#show', as: :page
+  get ':id', to: 'pages#show', as: :page
 
   # resources :pages, except: :show
   # get ':id', to: 'pages#show', as: :page
