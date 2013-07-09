@@ -75,10 +75,13 @@ a { text-decoration: none; }
   span { color: $full; }
 }
 
-/********* Wrapper *********/
-#wrapper {
-  margin: 200px auto 0 auto;
+/********* Wrapper & Footer *********/
+#wrapper, footer {
+  margin: 0 auto;
   width: 90%;
+}
+#wrapper {
+  margin-top: 200px;
 }
 
 /********* Columns *********/
@@ -130,9 +133,6 @@ nav#sidebar_nav {
   li { margin: 1em 0;}
   a { padding: 0.5em 1em; text-align: center; }
 }
-
-/********** Footer ************/
-footer { color: $light; float: left; }
 
 /* Internet Explorer */
 .ie {
