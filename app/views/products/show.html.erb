@@ -10,5 +10,4 @@
 </div>
 <%= link_to "Link naar de agenda", calendar_feed_path(protocol: "webcal", only_path: false, format: :ics) %>
 <% end %>
-<%= link_to 'Aanmelden', new_subscription_path(product_id: @product.id) %>
-<%= link_to 'Back', products_path %>
+<%= link_to 'Aanmelden', new_subscription_path(product_id: @product.id), class: "button" %>

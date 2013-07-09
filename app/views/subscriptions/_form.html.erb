@@ -1,7 +1,10 @@
 <%= simple_form_for @subscription do |f| %>
   <% if @product %>
     <%= f.hidden_field :product_id, value: @product.id %>
-    <%= content_tag :p, "Inschrijving voor #{@product.name}" %>
+    <%= content_tag :p do %>
+      Inschrijving voor: <%= raw link_to @product.name, product_path(@product) %>
+    <% end %>
+      
   <% else %>
     <%= f.association :product %>
   <% end %>

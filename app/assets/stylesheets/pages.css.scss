@@ -134,6 +134,18 @@ nav#sidebar_nav {
   a { padding: 0.5em 1em; text-align: center; }
 }
 
+a.button { background-color: $pink;
+  text-transform: uppercase;
+  -moz-border-radius: 5px;
+  -webkist-border-radius: 5px;
+  border-radius: 5px;
+  behavior: url(/assets/PIE.htc);
+  box-shadow: darken($full, 20%) 2px 2px 2px;
+  color: white;
+  padding: 0.5em 1em; text-align: center;
+  box-shadow: darken($pink, 20%) 1px 1px 1px;
+}
+
 /* Internet Explorer */
 .ie {
   #logo { position: absolute; top: 0; float: left; }
